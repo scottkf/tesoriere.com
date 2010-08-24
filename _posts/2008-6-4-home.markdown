@@ -1,0 +1,5 @@
+--- 
+layout: post
+title: home
+---
+				<div id="intro"><span class="r">SCOTT TESORIERE</span> constructs custom <span class="y">web sites</span>, web applications, web-services, networks, and is able to <span class="y">diagnose and repair</span> any problems relating to computers and computer security. He is based in <span class="y">Jupiter, FL</span> and is available throughout Florida and available to help you realize your business needs.</div>

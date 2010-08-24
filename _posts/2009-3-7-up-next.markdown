@@ -1,0 +1,8 @@
+--- 
+layout: post
+title: up next
+tags: portfolio
+---
+<a href="http://www.tesoriere.com/assets/2008/6/8/sandalhut.png" rel="lightbox"><img src="http://www.tesoriere.com/assets/2008/6/8/sandalhut.png" style="height:auto;width:400px" /></a>
+
+Last year, I completed a simple commerce website where I used my own solution written in rails. It worked, but it was a very simple application, not much flare, not much ajax (which is omg exciting). So for this, it would've wound up being a little too simplistic, and to avoid having to reinvent the square wheel, I tried using substruct. Substruct is great for what it is, but it hasn't been updated in some time now, so I tried redoing it with spree, and that's where I am now. The transition has been pretty smooth since I had finished most of the views already. As far as the functionality, it seems like a winner! Huzzah.

@@ -1,0 +1,19 @@
+---
+layout: default
+title: Journal
+syntax-highlighting: yes
+---
+
+<articles>
+{% for post in site.posts limit:5 %}
+  {% include post.html %}
+{% endfor %}
+</articles>
+<!-- <section id="bottomNav">
+	{% if paginator.previous_page %}
+	<a href="/journal/page{{ paginator.previous_page }}" title="{{ paginator.previous_page.title }}">&larr; Previous</a>
+	{% endif %}
+	{% if paginator.next_page %}
+	<a href="/journal/page{{ paginator.next_page }}" title="{{ paginator.next_page.title }}">Next &rarr;</a>
+	{% endif %}
+</section> -->

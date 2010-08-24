@@ -1,0 +1,8 @@
+--- 
+layout: post
+title: GTX470/480 (Fermi) in OSX
+tags: osx
+---
+This may or not be relevant to you, but it's interesting. How to use a GTX470/480/465/480M in OSX.
+
+[http://www.insanelymac.com/forum/index.php?showtopic=214219](http://www.insanelymac.com/forum/index.php?showtopic=214219)

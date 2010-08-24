@@ -1,0 +1,220 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import blueprint/reset
+
+// To configure blueprint, edit the partials/base.sass file.
+@import partials/base
+
+// Import all the default blueprint modules so that we can access their mixins.
+@import blueprint
+@import compass/css3
+@import compass/utilities/lists/horizontal-list
+@import compass/layout
+
+body
+  $nav-prepend: 2
+  $nav-columns: floor($blueprint-grid-columns / 3) - $nav-prepend
+  $content-prepend: 2
+  $content-columns: ceil(2 * $blueprint-grid-columns / 3) - $content-prepend - 2
+
+
+  +blueprint-typography(true)
+  
+  background: $body-background-color url(../images/top-background.jpg) no-repeat
+  font-family: Calibri,Arial,Helvetica Neue,Helvetica,sans-serif
+  
+  a, a:visited
+    color: $link-color
+  
+  .title
+    font-family: Calibri,Arial,Helvetica Neue,Helvetica,sans-serif
+    color: $title-color
+    display: block
+    font-size: 3.5em
+    letter-spacing: -0.07em
+    line-height: .5em
+    margin-left: -0.1em
+    margin-bottom: .2em
+  a.title:hover
+    color: $title-color
+  #container
+    +container
+    background: url(../images/top-background.jpg) no-repeat
+    +box-shadow(#000, 1px, 1px, 7px, 0px)
+    +border-bottom-radius(7px)
+
+  #header-top, #header-bottom, #content, #bottom, footer
+    +column($blueprint-grid-columns, true)
+    
+  #header-top, #header-bottom, #content, #bottom, nav.main, footer, #container, #articles
+    background: $content-background-color
+
+  
+  #header-top
+    height: 34px
+    background: url(../images/developer-text.jpg) no-repeat
+    text-align: center
+    font-weight: normal
+    color: $title-color
+    font-variant: small-caps
+    font-size: 1.5em
+  #header-bottom
+    height: 176px 
+    background: url(../images/header-background.jpg) no-repeat top left
+  #content
+    background: $content-background-color url(../images/content-background.jpg) no-repeat top left
+    margin-bottom: 4em
+    +column($content-columns)
+    +prepend($content-prepend)
+    article.main
+      font-size: 1.5em
+      line-height: 1.6em
+  nav.main
+    +column($nav-columns, true)
+    +prepend($nav-prepend)
+    #search, #tags
+      display: none
+    ul
+      list-style-type: none
+      margin: 0em
+      padding-left: 0em
+      li
+        font-size: 1.5em
+        &.tesoriere
+          a
+            color: $title-color
+      a
+        text-decoration: none
+        &:hover span
+          color: $link-color
+      span
+        margin-top: -.5em
+        display: block
+        // border-top: 1px solid #EDE2AE
+        font-size: .8em
+        color: #A98E6A
+      
+  #bottom
+    margin-bottom: 3em
+    article
+      +column($content-columns)
+      +prepend($content-prepend)
+      .more
+        display: block
+        +float-right
+        font-size: 1.1em
+        margin-right: 1em
+        margin-top: 1em
+      ul
+        +horizontal-list
+        margin-top: 1em
+        li
+          padding: 0px
+          margin-right: .7em
+          border: 1px solid $content-background-color
+          height: 110px
+        li:hover 
+          border: 1px solid #888
+        img
+          height: auto
+          width: 200px
+    aside
+      +column($nav-columns, true)
+      +prepend($nav-prepend)
+      
+  footer
+    height: 28px
+    padding-top: 15px
+    background: url(../images/footer-background.jpg)
+    nav.bottom
+      +prepend(2)
+      +column(10)
+    ul
+      +piped-list
+      +horizontal-list
+      li
+        padding-right:  0px
+    aside
+      +prepend(8)
+      +column(4, true)
+      bottom: 11px
+      position: relative
+  .red
+    color: #CA1E1E
+  .yellow
+    color: #8A5500
+  .green
+    color: #3f700e
+
+body#articles
+  $nav-prepend: 1
+  $content-prepend: 2
+  $nav-append: 1
+  $nav-columns: floor($blueprint-grid-columns / 3) - $nav-prepend - 1 - $nav-append
+  $content-columns: ceil(2 * $blueprint-grid-columns / 3) - $content-prepend + 1
+  
+  #header-bottom
+    display: none
+
+  #content, nav.main
+    padding-top: 150px
+  
+
+  #content
+    background: url(../images/content-background-journal.jpg) no-repeat top left
+    +column($content-columns)
+    +prepend($content-prepend)
+  
+  .title
+    font-size: 2.3em
+  
+  .post
+    line-height: 1.4em
+    margin-bottom: 2.5em
+    padding-bottom: 2.5em
+    border-bottom: 2px solid #ede2ae
+
+    header
+      h2
+        font-size: 1.7em
+        text-transform: uppercase
+        line-height: 1em
+        font-weight: bold
+        font-family: 'Lucida Grande', 'Arial', sans-serif
+        a
+      .date
+        font-size: 1.1em
+        margin-top: -1em
+        margin-bottom: 2em
+        a
+          color: #ae6f56
+          &:hover
+            color: #aaa
+    section.content
+      img
+        width: $content-columns * ($blueprint-grid-columns + $blueprint-grid-margin)
+        height: auto
+        border: 1px solid #ccc
+      p
+        font-size: 1.2em
+        line-height: 1.3em
+        margin-bottom: 1.4em
+      p.tags
+    section.comments
+  
+  nav.main
+    +column($nav-columns, true)
+    +prepend($nav-prepend)
+    +append($nav-append)
+    
+    ul li span
+      display: none
+    ul li 
+      margin-bottom: 0em
+    #search, #tags
+      display: block
+      
+    ul, section
+      margin-bottom: 2em
+
+
+
