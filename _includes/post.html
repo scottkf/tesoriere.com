@@ -1,7 +1,11 @@
 	<article class="post">
 		<header>
 			<h2><a href="{{ post.url }}" title="[Permalink] {{ post.title }}">{{ post.title }}</a></h2>
-			<div class="date">Stamped: {{ post.date | date_to_string }}</div>
+			<div class="date">
+				Stamped: {{ post.date | date_to_string }}
+ 				{% if post.comments_disabled != true %} | <a href="{{ post.url }}#disqus_thread">Show comments</a>
+				{% endif %}
+				</div>
 		</header>
 		<section class="content">
 			{{ post.content }}

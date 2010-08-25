@@ -66,6 +66,7 @@
 			</section>
 		</nav>
 		<section id="bottom">
+			{% if page.title == 'Home' %}
 			<article>
 				<span class="title">recent work</span>
 				<ul>
@@ -80,6 +81,8 @@
 				mail. <a href="mailto:web@tesoriere.com">web@tesoriere.com</a><br />
 				currently <b>accepting</b> projects
 			</aside>
+			{% else %}
+			{% endif %}
 		</section>
 		<footer>
 			<nav class="bottom">
