@@ -7,6 +7,7 @@ require 'webrick'
 require 'directory_watcher'
 require "term/ansicolor"
 require "jekyll"
+require "rdiscount"
 include Term::ANSIColor
 include WEBrick
 
@@ -124,7 +125,7 @@ syntax-highlighting: yes
 HTML
 
   posts.each do |p|
-    html << Liquid::Template.parse(post_template).render("post" => p.to_liquid)
+    html << Liquid::Template.parse(post_template).render("post" => p.to_liquid, "content" => RDiscount.new(p.content).to_html)
   end
 
     FileUtils.mkdir_p("tags/#{tag}")

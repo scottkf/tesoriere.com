@@ -6,10 +6,8 @@
 		<section class="content">
 			{% if page.title == 'Journal' %}
 			{{ post.content }}
-			{% elsif page.title contains 'tags' %}
-			{{ page.content }}
 			{% else %}
-			{{ content }}
+					{{ content }}
 			{% endif %}
 		</section>
 	  tags:
