@@ -124,9 +124,8 @@ syntax-highlighting: yes
   <h1 class="title">#{tag}</h1>
 HTML
 
-  posts.each do |p|
+  posts.sort! { |a,b| b.date <=> a.date }.each do |p|
     html << Liquid::Template.parse(post_template).render("post" => p.to_liquid, "content" => p.transform().to_s)
-    # html << Liquid::Template.parse(post_template).render("post" => p.to_liquid, "content" => RDiscount.new(p.content).to_html)
   end
 
     FileUtils.mkdir_p("tags/#{tag}")

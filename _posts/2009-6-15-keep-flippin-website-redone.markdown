@@ -7,7 +7,7 @@ tags:
 - symphony
 img: keep-flippin-thumb.png
 ---
-<a href="http://tesoriere.com/assets/2009/6/15/Picture_1.png" rel="lightbox"><img alt="keep flippin picture" title="project picture" src="http://tesoriere.com/assets/2009/6/15/Picture_1.png"></a>
+<a href="http://tesoriere.com/assets/2009/6/15/Picture_1.png" rel="portfolio"><img alt="keep flippin picture" title="project picture" src="http://tesoriere.com/assets/2009/6/15/Picture_1.png"></a>
 
 <b>Below this is all tech-talk.</b> To summarize, I used new stuff to make the site better, make it quicker, and more responsive. <a href="http://keepflippin.com">This is what I made.</a>
 
