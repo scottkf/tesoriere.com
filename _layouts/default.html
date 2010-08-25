@@ -21,7 +21,7 @@
   <![endif]-->
 	{% if page.stylesheets != nil %}{% for stylesheet in page.stylesheets %}<link rel="stylesheet" href="/stylesheets/{{ stylesheet }}" />{% endfor %}{% endif %}
 	{% if page.syntax-highlighting %}<link rel="stylesheet" href="/stylesheets/syntax-highlighting.css" />{% endif %}
-	{% if page.layout == 'post' or page.title == 'Journal' %}<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	{% if page.title != 'Home' %}<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 	<script type="text/javascript" src="/javascripts/jquery.colorbox-min.js"></script>
 	<script type="text/javascript" src="/javascripts/site.js"></script>
 	<link rel="stylesheet" href="/stylesheets/colorbox.css" />
@@ -82,6 +82,17 @@
 				currently <b>accepting</b> projects
 			</aside>
 			{% else %}
+			<article>
+				<span class="title">recent entries</span>
+				{% for post in site.posts limit:10 offset:4 %}
+				<section class="article-link">
+					<a href="{{ post.url }}" title="[Permalink] {{ post.url }}">{{ post.title }}</a>
+				</section>
+				{% endfor %}
+			</article>
+			<aside>
+				<span class='title'>site links</span>
+			</aisde>
 			{% endif %}
 		</section>
 		<footer>
@@ -96,8 +107,17 @@
 		</footer>
 	</div>
 	
-	
-	
+{% if page.title != 'Home' %}
+<script>
+	var disqus_shortname = 'tesoriere';
+	(function () {
+	  var s = document.createElement('script'); s.async = true;
+	  s.src = 'http://disqus.com/forums/tesoriere/count.js';
+	  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+	}());
+</script>
+{% endif %}
+</script>
 	
 </body>
 </html>

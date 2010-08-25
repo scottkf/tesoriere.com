@@ -2,4 +2,3 @@ exclude: ['Rakefile.rb', 'Readme.md', 'src', 'config.rb']
 markdown: rdiscount
 permalink: pretty
 pygments: true
-lsi: true

@@ -2,27 +2,5 @@
 layout: default
 syntax-highlighting: yes
 ---
-<article class="post">
-	<header>
-		<h2><a href="{{ post.url }}" title="[Permalink] {{ post.title }}">{{ page.title }}</a></h2>
-		<div class="date">Stamped: {{ page.date | date_to_string }} {% if page.comments_disabled != true %} | <a href="{{ post.url }}#disqus_thread">Show comments</a>{% endif %}</div>
-	</header>
-	<section class="content">
-		{{ content }}
-	</section>
-  Tags:
-  {% for tag in page.tags %}
-    <a href="/tags/{{ tag }}" title="View posts tagged with &quot;{{ tag }}&quot;">{{ tag }}</a>{% if forloop.last != true %}, {% endif %}
-  {% endfor %}
-	{% if page.comments_disabled != true %}
-	<section class="comments">
-		<div id="disqus_thread"></div>
-		<script type="text/javascript">
-			var disqus_developer = 1; 
-		</script>
-		<script src="http://disqus.com/forums/tesoriere/count.js"></script>
-		<script src="http://disqus.com/forums/tesoriere/embed.js"></script>
-		<noscript><a href="http://tesoriere.disqus.com/?url=ref">View the discussion thread.</a></noscript>
-	</section>
-	{% endif %}
-</article>
+{% assign post = page %}
+{% include post.html %}

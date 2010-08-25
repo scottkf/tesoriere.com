@@ -5,11 +5,16 @@ syntax-highlighting: yes
 ---
 
 <articles>
-{% for post in site.posts limit:5 %}
+{% for post in site.posts limit:4 %}
   {% include post.html %}
 {% endfor %}
 </articles>
 <script type="text/javascript">
-	var disqus_developer = 1; 
+var disqus_developer = 1; 
+var disqus_shortname = 'tesoriere';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/tesoriere/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
 </script>
-<script src="http://disqus.com/forums/tesoriere/count.js"></script>
