@@ -1,7 +1,7 @@
-# Originally adopted from Tate Johnson's Rakefile
-# http://github.com/tatey/tatey.com/blob/master/Rakefile
-# Some code from the jekyll executable file
-# http://github.com/mojombo/jekyll/blob/master/bin/jekyll
+# Originally adopted from Raimonds Simanovskis Rakefile, 
+#   http://github.com/rsim/blog.rayapps.com/blob/master/Rakefile
+#   which was in turn adopted from Tate Johnson's Rakefile
+#   http://github.com/tatey/tatey.com/blob/master/Rakefile
 
 require 'webrick'
 require 'directory_watcher'
