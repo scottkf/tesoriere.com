@@ -125,7 +125,8 @@ syntax-highlighting: yes
 HTML
 
   posts.each do |p|
-    html << Liquid::Template.parse(post_template).render("post" => p.to_liquid, "content" => RDiscount.new(p.content).to_html)
+    html << Liquid::Template.parse(post_template).render("post" => p.to_liquid, "content" => p.transform().to_s)
+    # html << Liquid::Template.parse(post_template).render("post" => p.to_liquid, "content" => RDiscount.new(p.content).to_html)
   end
 
     FileUtils.mkdir_p("tags/#{tag}")
