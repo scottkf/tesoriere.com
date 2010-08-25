@@ -19,20 +19,28 @@
   <!--[if IE]>
       <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <![endif]-->
-	{% if page.stylesheets != nil %}{% for stylesheet in page.stylesheets %}<link rel="stylesheet" href="/stylesheets/{{ stylesheet }}">{% endfor %}{% endif %}
-		{% if page.syntax-highlighting %}<link rel="stylesheet" href="/stylesheets/syntax-highlighting.css">{% endif %}
-				
+	{% if page.stylesheets != nil %}{% for stylesheet in page.stylesheets %}<link rel="stylesheet" href="/stylesheets/{{ stylesheet }}" />{% endfor %}{% endif %}
+	{% if page.syntax-highlighting %}<link rel="stylesheet" href="/stylesheets/syntax-highlighting.css" />{% endif %}
+	{% if page.layout == 'post' or page.title == 'Journal' %}<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.colorbox-min.js"></script>
+	<script type="text/javascript" src="/javascripts/site.js"></script>
+	<link rel="stylesheet" href="/stylesheets/colorbox.css" />
+	{% endif %}	
 	<script type="text/javascript">
-	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-6824117-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
 	</script>
-	<script type="text/javascript">
-	try { var pageTracker = _gat._getTracker("UA-6824117-1"); pageTracker._trackPageview(); } catch(err) {}</script>
 	<script src="/javascripts/modernizr-1.5.min.js"></script>
 
 	</head>
 	
-<body{% if page.title != 'Home' %} id="articles"{% endif %}>
+<body{% if page.title != 'Home' and page.title != 'four-oh-four' %} id="articles"{% endif %}>
 	<div id="container">
 		<header id="header-top">
 			developer, designer, consultant
@@ -50,6 +58,7 @@
 			</ul>			
 			<section id="search">
 				<span class="title">search</span>
+				{% include search.html %}
 			</section>
 			<section id="tags">
 				<span class="title">tags</span>
