@@ -1,6 +1,9 @@
 --- 
 layout: post
 title: Uploading multiple files with Symphony CMS
+tags:
+- symphony
+- symphony extension
 ---
 ![Mass Upload Utility](http://tesoriere.com/assets/2009/6/2/Picture_1.png "mass upload utility")
 

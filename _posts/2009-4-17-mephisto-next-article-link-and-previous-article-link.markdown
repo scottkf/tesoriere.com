@@ -19,38 +19,40 @@ end
 {% endhighlight %}
 Then to use it, go to your liquid template and add the following somewhere important:
 
-{% highlight ruby %}
+
+{% highlight html %}
 #previous link
-{% if article.previous? %}
-  {{ article | previous_article | link_to_article }}
-{% else %}
+{{ "{% if article.previous? " }}%}
+  {{ "{{article | previous_article | link_to_article " }}}}
+{{ "{% else " }}%}
   <a href="/">home</a>
-{% endif %}
+{{ "{% endif " }}%}
 
 #next link
-{% if article.next? %}
-  {{ article | next_article | link_to_article }}
-{% else %}
+{{ "{% if article.next? " }}%}
+{{ "{{article | next_article | link_to_article " }}}}
+{{ "{% else " }}%}
   <a href="/">home</a>
-{% endif %}
+{{ "{% endif " }}%}
+
 {% endhighlight %}
 
 If you want the links to have different text, say next/previous, you need to change the previous like so
 
-{% highlight ruby %}
+{% highlight html %}
 #previous link
-{% if article.previous? %}
-  {{ article | previous_article | link_to_article: 'PREVIOUS' }}
-{% else %}
+{{ "{% if article.previous? " }}%}
+  {{ "{{article | previous_article | link_to_article: 'PREVIOUS' " }}}}
+{{ "{% else " }}%}
   <a href="/">home</a>
-{% endif %}
+{{ "{% endif " }}%}
 
 #next link
-{% if article.next? %}
-  {{ article | next_article | link_to_article: 'NEXT' }}
-{% else %}
+{{ "{% if article.next? " }}%}
+{{ "{{article | next_article | link_to_article: 'NEXT' " }}}}
+{{ "{% else " }}%}
   <a href="/">home</a>
-{% endif %}
+{{ "{% endif " }}%}
 {% endhighlight %}
 
 

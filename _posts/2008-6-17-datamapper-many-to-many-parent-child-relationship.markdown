@@ -1,14 +1,14 @@
 --- 
 layout: post
 title: datamapper - many-to-many parent child relationship
+tags: datamapper habtm merb
 ---
 I started playing around with datamapper to see if I could model an many to many parent/child relationship (self-referential habtm?) for an upcoming project. The plan was to use sproutcore for the gui (once I figured it out!), and merb as a webservice that it interacts with.  
 
-"Justin gave me a kickstart":http://jit.nuance9.com/2008/06/datamapper-parent-child-relationship.html with datamapper, and I eventually came up with:
+[Justin gave me a kickstart](http://jit.nuance9.com/2008/06/datamapper-parent-child-relationship.html) with datamapper, and I eventually came up with:
 
 
-<pre>
-<code class="ruby">
+{% highlight ruby %}
 #Person.rb
 class Person
   include DataMapper::Resource
@@ -38,7 +38,6 @@ class Relationship
   belongs_to :parent, :class_name => 'Person'
   belongs_to :child, :class_name => 'Person'
 end
-</code>
-</pre>
+{% endhighlight %}
 
 I'll eventually write some spec's for it.
