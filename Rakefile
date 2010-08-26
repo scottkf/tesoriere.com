@@ -69,7 +69,7 @@ desc 'Build, deploy, then clean.'
 task :deploy => :build do
   domain = "tesoriere.com"
 	printHeader "Deploying website to #{domain}"
-	sh "rsync -rtzh --delete _site/ #{host_var['DEPLOY_USER']}@#{host_var['DEPLOY_HOST']}:~/#{domain}/"
+	sh "rsync -rtzh _site/ #{host_var['DEPLOY_USER']}@#{host_var['DEPLOY_HOST']}:~/#{domain}/"
 	Rake::Task['clean'].execute
 end
 
