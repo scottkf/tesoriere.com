@@ -13,6 +13,7 @@
 body
   $nav-prepend: 2
   $nav-columns: floor($blueprint-grid-columns / 3) - $nav-prepend
+  $nav-append: 1
   $content-prepend: 2
   $content-columns: ceil(2 * $blueprint-grid-columns / 3) - $content-prepend - 2
 
@@ -117,9 +118,31 @@ body
         img
           height: auto
           width: 200px
+    article.recent
+      +prepend($content-prepend)
+      +column($content-columns + $nav-columns)
+      +append($nav-append)
+      .more
+        font-size: 1.2em
+        float: none
+        display: block
+        margin-top: 7px
+    li.dsq-widget-item
+      border-bottom: 1px solid $border-color
+      margin: 0px
+      margin-bottom: 5px
+      padding-bottom: 5px
+    section.article-link
+      a
+        display: block
+        border-bottom: 1px solid $border-color
+        text-decoration: none
+        font-size: 1.1em
     aside
       +column($nav-columns, true)
       +prepend($nav-prepend)
+      
+
       
   footer
     height: 28px
@@ -274,28 +297,6 @@ body#articles
       
     ul, section
       margin-bottom: 2em
-      
-  #bottom
-    article
-      +prepend($content-prepend)
-      +column($content-columns + $nav-columns)
-      +append($nav-append)
-      .more
-        font-size: 1.2em
-        float: none
-        display: block
-        margin-top: 7px
-    li.dsq-widget-item
-      border-bottom: 1px solid $border-color
-      margin: 0px
-      margin-bottom: 5px
-      padding-bottom: 5px
-    section.article-link
-      a
-        display: block
-        border-bottom: 1px solid $border-color
-        text-decoration: none
-        font-size: 1.1em
 
 
 

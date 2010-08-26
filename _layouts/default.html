@@ -67,6 +67,7 @@
 			</section>
 		</nav>
 		<section id="bottom">
+			{% if page.title != 'Archive' %}
 			{% if page.title == 'Home' %}
 			<article>
 				<span class="title">recent work</span>
@@ -82,9 +83,8 @@
 				mail. <a href="mailto:web@tesoriere.com">web@tesoriere.com</a><br />
 				currently <b>accepting</b> projects
 			</aside>
-			{% elsif page.title == 'Archive' %}
-			{% else %}
-			<article>
+			{% endif %}
+			<article class="recent">
 				<span class="title">recent entries</span>
 				{% if page.title == 'Journal' %}
 					{%assign offset = 4%}
@@ -128,8 +128,6 @@
 	  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 	}());
 </script>
-{% endif %}
-</script>
-	
+{% endif %}	
 </body>
 </html>
