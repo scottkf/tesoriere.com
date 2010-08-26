@@ -1,6 +1,10 @@
 --- 
 layout: post
 title: Dealing with database concurrency (locking) in the Symphony CMS
+tags:
+- symphony extension
+- symphony
+- concurrency
 ---
 ![picture of it](http://tesoriere.com/assets/2009/6/14/Picture_1.png)
 
