@@ -51,9 +51,10 @@
 		</section>
 		<nav class="main">
 			<ul>
-				<li class="tesoriere"><a href="/" class="title">navigate</a></li>
+				<li class="tesoriere"><a href="/" class="title">{% if page.title != 'Home' %}home{% else %}navigate{%endif%}</a></li>
 				<li><a href="/tags/portfolio" style="height: 40px; ">projects<span>see the projects</span></a></li>
 				<li><a href="/journal" style="height: 20px; ">journal<span>recent happenings</span></a></li>
+				{% if page.title != 'Home' %}<li><a href="/archive" style="height: 20px">archives<span>older articles</span></a></li>{%endif%}
 				<li><a href="mailto:web@tesoriere.com" style="height: 20px; ">contact<span class="green">contact via email</span></a></li>
 			</ul>			
 			<section id="search">
@@ -81,6 +82,7 @@
 				mail. <a href="mailto:web@tesoriere.com">web@tesoriere.com</a><br />
 				currently <b>accepting</b> projects
 			</aside>
+			{% elsif page.title == 'Archive' %}
 			{% else %}
 			<article>
 				<span class="title">recent entries</span>
@@ -109,6 +111,7 @@
 				<ul>
 					<li><a href="/tags/portfolio">projects</a></li>
 					<li><a href="mailto:web@tesoriere.com">contact</a></li>
+					<li><a href="/archive">archives</a></li>
 					<li><a href="/">home</a></li>
 				</ul>
 			</nav>
