@@ -53,7 +53,7 @@ sh 'rsync -rtzh --delete _site/ #{DEPLOY_USER}@#{DEPLOY_HOST}:~/#{domain}/'
 
 ## Please don't steal me :( ##
 
-You can view the [full source of this **entire site** on github](http://github.com/scottkf/tesoriere.com-on-jekyll/master)! It really only takes a couple days to do, and it's worth it if you want to try something new, simple, and I'm sure as hell my hosting company appreciates less load.
+You can view the [full source of this **entire site** on github](http://github.com/scottkf/tesoriere.com/tree/master)! It really only takes a couple days to do, and it's worth it if you want to try something new, simple, and I'm sure as hell my hosting company appreciates less load.
 
   [1]: http://github.com/mojombo/jekyll
   [2]: http://wiki.github.com/mojombo/jekyll/
