@@ -1,6 +1,6 @@
 --- 
 layout: post
-title: migrating from mephisto to jekyll
+title: Migrating from mephisto to jekyll
 tags: jekyll design compass 
 ---
 

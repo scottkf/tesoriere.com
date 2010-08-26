@@ -3,7 +3,7 @@ layout: post
 title: Using a 3.0 iPhone on T-Mobile? Get MMS Working!
 tags: iphone
 ---
-<a href="http://tesoriere.com/assets/2009/6/17/web.jpg" rel="lightbox"><img src="http://tesoriere.com/assets/2009/6/17/web.jpg" alt="settings" style="width: 150px; height: auto; float: right; margin-left: 10px" /></a>
+<a href="http://tesoriere.com/images/assets/2009/6/17/web.jpg" rel="lightbox"><img src="http://tesoriere.com/images/assets/2009/6/17/web.jpg" alt="settings" style="width: 150px; height: auto; float: right; margin-left: 10px" /></a>
 
 I am, and have been. T-Mobile's customer service is beyond amazing.
 
