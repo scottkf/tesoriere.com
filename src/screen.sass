@@ -172,6 +172,7 @@ body#articles
     margin-bottom: 1em
     font-size: 3.7em
 
+  // article post
   .post
     line-height: 1.4em
     margin-bottom: 2.5em
@@ -179,14 +180,18 @@ body#articles
     border-bottom: 2px solid $border-color
     +column($content-columns)
 
-    header
-      h2
-        font-size: 1.7em
+    h2
+      font-size: 1.7em
+      line-height: 1em
+      font-weight: bold
+      font-family: 'Lucida Grande', 'Arial', sans-serif
+      a
+        text-decoration: none
         text-transform: uppercase
-        line-height: 1em
-        font-weight: bold
-        font-family: 'Lucida Grande', 'Arial', sans-serif
-        a
+        &:hover
+          text-decoration: underline
+          color: #444
+    header
       .date
         font-size: 1.1em
         margin-top: -1em
@@ -194,18 +199,67 @@ body#articles
         a
           color: #ae6f56
           &:hover
-            color: #aaa
+            color: #777
+        h2
+          a
+            text-transform: uppercase
     section.content
+      ul
+        font-size: 1.2em
+        padding-left: 2.5em
       img
         width: $content-columns * ($blueprint-grid-columns + $blueprint-grid-margin)
         height: auto
         border: 1px solid #ccc
       p
-        font-size: 1.2em
-        line-height: 1.3em
+        font-size: 1.25em
+        line-height: 1.4em
         margin-bottom: 1.4em
+        h2
+          letter-spacing: 0.05em
       p.tags
+      a
+        &:hover
+          color: #777
     section.comments
+    
+  // archive link
+  .archives article
+    padding-bottom: 5px
+    margin-bottom: 5px
+    border-bottom: 1px solid $border-color
+    header
+      h2
+        margin-bottom: 0px
+        a
+          font-size: 0.7em
+          line-height: 0.9em
+          text-transform: Capitalize
+          font-weight: normal
+      .date
+        margin: 0em
+        margin-bottom: 0.7em
+        
+    .content
+      img
+        display: none
+      h2
+        font-size: 0.8em
+      p
+        display: inline
+        line-height: 1.3em
+        font-size: 1em
+
+  // single post
+  .single 
+    border-bottom: 0px
+    .content
+    .comments
+      margin-top: 1em      
+      border-top: 2px solid $border-color
+    
+  .arch
+    margin-bottom: 0.5em
   
   nav.main
     +column($nav-columns, true)
@@ -223,6 +277,20 @@ body#articles
       margin-bottom: 2em
       
   #bottom
+    article
+      +prepend($content-prepend)
+      +column($content-columns + $nav-columns)
+      +append($nav-append)
+      .more
+        font-size: 1.2em
+        float: none
+        display: block
+        margin-top: 7px
+    li.dsq-widget-item
+      border-bottom: 1px solid $border-color
+      margin: 0px
+      margin-bottom: 5px
+      padding-bottom: 5px
     section.article-link
       a
         display: block

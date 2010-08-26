@@ -1,16 +1,14 @@
 ---
 layout: default
-title: Journal
+title: Archive
 syntax-highlighting: yes
 ---
 
-<articles>
-{% for post in site.posts limit:4 %}
-  {% include post.html %}
+<h2 class="title arch">the archives</h2>
+<articles class="archives">
+{% for post in site.posts %}
+	{% include post.html %}
 {% endfor %}
-	<article class="post" style="border-bottom: none">
-		<h2><a href="/archive">View the entire backlog of articles</a></h2>
-	</article>
 </articles>
 <script type="text/javascript">
 var disqus_shortname = 'tesoriere';

@@ -12,7 +12,7 @@
 	<title>Tesoriere - {{ page.title }}</title>
 	<meta name="description" content="Articles and projects written and created by developer Scott Tesoriere.">
 	<meta name="author" content="Scott Tesoriere">
-	<link rel="alternate" type="application/atom+xml" title="Carter Allen - Feed" href="/atom.xml">
+	<link rel="alternate" type="application/atom+xml" title="Scott Tesoriere - feed" href="/atom.xml">
 	
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
@@ -84,15 +84,24 @@
 			{% else %}
 			<article>
 				<span class="title">recent entries</span>
-				{% for post in site.posts limit:10 offset:4 %}
+				{% if page.title == 'Journal' %}
+					{%assign offset = 4%}
+				{%else%}
+					{% assign offset = 1 %}
+				{%endif%}
+				{% for post in site.posts limit:10 offset:offset %}
 				<section class="article-link">
 					<a href="{{ post.url }}" title="[Permalink] {{ post.url }}">{{ post.title }}</a>
 				</section>
 				{% endfor %}
+				<section class="more">
+					<a href="/archive" title="View the entire archive">View the entire archive of articles</a>
+				</section>
 			</article>
-			<aside>
-				<span class='title'>site links</span>
-			</aisde>
+			<!-- <aside>
+				<span class='title'>recent comments</span>
+				<div id="recentcomments" class="dsq-widget"><script type="text/javascript" src="http://disqus.com/forums/tesoriere/recent_comments_widget.js?num_items=5&hide_avatars=1&avatar_size=32&excerpt_length=200"></script></div>
+			</aside> -->
 			{% endif %}
 		</section>
 		<footer>

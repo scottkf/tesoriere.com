@@ -1,15 +1,18 @@
-	<article class="post">
+	<article class="post{% if single == true %} single{%endif%}">
 		<header>
 			<h2><a href="{{ post.url }}" title="[Permalink] {{ post.title }}">{{ post.title }}</a></h2>
-			<div class="date">Stamped: {{ post.date | date_to_string }} {% if post.comments_disabled != true %} | <a href="{{ post.url }}#disqus_thread">Show comments</a>{% endif %}</div>
+			<div class="date"><span>Stamped: {{ post.date | date_to_string }} {% if post.comments_disabled != true %} |</span> <a href="{{ post.url }}#disqus_thread">Show comments</a>{% endif %}</div>
 		</header>
 		<section class="content">
 			{% if page.title == 'Journal' %}
 			{{ post.content }}
+			{% elsif page.title == "Archive" %}
+			{{ post.content | strip_html | truncate: 200 }}
 			{% else %}
 					{{ content }}
 			{% endif %}
 		</section>
+		{% if page.title != 'Archive' %}
 	  tags:
 	  {% for tag in post.tags %}
 	    <a href="/tags/{{ tag }}" title="View posts tagged with &quot;{{ tag }}&quot;">{{ tag }}</a>{% if forloop.last != true %}, {% endif %}
@@ -18,7 +21,6 @@
 		<section class="comments">
 			<div id="disqus_thread"></div>
 			<script type="text/javascript">
-				var disqus_developer = 1; 
 			  (function() {
 			   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 			   dsq.src = 'http://tesoriere.disqus.com/embed.js';
@@ -27,5 +29,6 @@
 			</script>
 			<noscript><a href="http://tesoriere.disqus.com/?url=ref">View the discussion thread.</a></noscript>
 		</section>
+		{% endif %}
 		{% endif %}
 	</article>

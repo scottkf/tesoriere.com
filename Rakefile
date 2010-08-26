@@ -3,6 +3,9 @@
 #   which was in turn adopted from Tate Johnson's Rakefile
 #   http://github.com/tatey/tatey.com/blob/master/Rakefile
 
+deploy_rb = File.expand_path('deploy.rb', __FILE__)
+require deploy_rb if File.file?(deploy_rb)
+
 require 'webrick'
 require 'directory_watcher'
 require "term/ansicolor"
@@ -65,8 +68,9 @@ end
 
 desc 'Build, deploy, then clean.'
 task :deploy => :build do
-	printHeader "Deploying website to http://tesoriere.com"
-	sh 'rsync -rtzh _site/ keepfli@tesoriere.com:~/tesoriere.com/'
+  domain = "tesoriere.com"
+	printHeader "Deploying website to #{domain}"
+	sh 'rsync -rtzh --delete _site/ #{DEPLOY_USER}@#{DEPLOY_HOST}:~/#{domain}/'
 	Rake::Task['clean'].execute
 end
 
