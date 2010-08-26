@@ -1,162 +1,160 @@
-pre
-  overflow: hidden
-  &.overflow_visible_hover, &.overflow_visible_sticky
-    overflow: visible
-  
-  font-family: Monaco, Courier, monotype
-  padding: 10px
-  font-size: 8pt
-  border: 1px solid #cbbf8c
-
 .highlight
-  .hll
-    background-color: #ffffcc
   background: #ffffff
   .c
-    color: #606060
+    color: #999988
     font-style: italic
   .err
-    color: #F00000
-    background-color: #F0A0A0
-  .k
-    color: #208090
+    color: #a61717
+    background-color: #e3d2d2
+  .k, .o
     font-weight: bold
-  .o
-    color: #303030
   .cm
-    color: #606060
+    color: #999988
     font-style: italic
   .cp
-    color: #507090
+    color: #999999
+    font-weight: bold
   .c1
-    color: #606060
+    color: #999988
     font-style: italic
   .cs
-    color: #c00000
+    color: #999999
     font-weight: bold
     font-style: italic
   .gd
-    color: #A00000
+    color: #000000
+    background-color: #ffdddd
+    .x
+      color: #000000
+      background-color: #ffaaaa
   .ge
     font-style: italic
   .gr
-    color: #FF0000
+    color: #aa0000
   .gh
-    color: #000080
-    font-weight: bold
+    color: #999999
   .gi
-    color: #00A000
+    color: #000000
+    background-color: #ddffdd
+    .x
+      color: #000000
+      background-color: #aaffaa
   .go
-    color: #808080
+    color: #888888
   .gp
-    color: #c65d09
-    font-weight: bold
+    color: #555555
   .gs
     font-weight: bold
   .gu
-    color: #800080
-    font-weight: bold
+    color: #aaaaaa
   .gt
-    color: #0040D0
-  .kc, .kd, .kn
-    color: #208090
-    font-weight: bold
-  .kp
-    color: #0080f0
-    font-weight: bold
-  .kr
-    color: #208090
+    color: #aa0000
+  .kc, .kd, .kp, .kr
     font-weight: bold
   .kt
-    color: #6060f0
+    color: #445588
     font-weight: bold
   .m
-    color: #6000E0
-    font-weight: bold
+    color: #009999
   .s
-    background-color: #e0e0ff
+    color: #d14
   .na
-    color: #000070
+    color: #008080
   .nb
-    color: #007020
+    color: #0086B3
   .nc
-    color: #e090e0
+    color: #445588
     font-weight: bold
   .no
-    color: #50e0d0
-    font-weight: bold
-  .nd
-    color: #505050
-    font-weight: bold
+    color: #008080
   .ni
-    color: #800000
-  .ne
-    color: #F00000
-    font-weight: bold
-  .nf
-    color: #50e0d0
-    font-weight: bold
-  .nl
-    color: #907000
+    color: #800080
+  .ne, .nf
+    color: #990000
     font-weight: bold
   .nn
-    color: #0e84b5
-    font-weight: bold
+    color: #555555
   .nt
-    color: #007000
+    color: #000080
   .nv
-    color: #003060
+    color: #008080
   .ow
-    color: #000000
     font-weight: bold
   .w
     color: #bbbbbb
-  .mf
-    color: #6000E0
-    font-weight: bold
-  .mh
-    color: #005080
-    font-weight: bold
-  .mi
-    color: #6060f0
-    font-weight: bold
-  .mo
-    color: #4000E0
-    font-weight: bold
-  .sb
-    background-color: #e0e0ff
-  .sc
-    color: #8080F0
-  .sd
-    color: #D04020
-  .s2
-    background-color: #e0e0ff
-  .se
-    color: #606060
-    font-weight: bold
-    background-color: #e0e0ff
-  .sh
-    background-color: #e0e0ff
-  .si
-    background-color: #e0e0e0
-  .sx
-    color: #f08080
-    background-color: #e0e0ff
+  .mf, .mh, .mi, .mo
+    color: #009999
+  .sb, .sc, .sd, .s2, .se, .sh, .si, .sx
+    color: #d14
   .sr
-    color: #000000
-    background-color: #e0e0ff
+    color: #009926
   .s1
-    background-color: #e0e0ff
+    color: #d14
   .ss
-    color: #f0c080
+    color: #990073
   .bp
-    color: #007020
-  .vc
-    color: #c0c0f0
-  .vg
-    color: #f08040
-  .vi
-    color: #a0a0f0
+    color: #999999
+  .vc, .vg, .vi
+    color: #008080
   .il
-    color: #6060f0
-    font-weight: bold
+    color: #009999
+
+/* Comment
+/* Error
+/* Keyword
+/* Operator
+/* Comment.Multiline
+/* Comment.Preproc
+/* Comment.Single
+/* Comment.Special
+/* Generic.Deleted
+/* Generic.Deleted.Specific
+/* Generic.Emph
+/* Generic.Error
+/* Generic.Heading
+/* Generic.Inserted
+/* Generic.Inserted.Specific
+/* Generic.Output
+/* Generic.Prompt
+/* Generic.Strong
+/* Generic.Subheading
+/* Generic.Traceback
+/* Keyword.Constant
+/* Keyword.Declaration
+/* Keyword.Pseudo
+/* Keyword.Reserved
+/* Keyword.Type
+/* Literal.Number
+/* Literal.String
+/* Name.Attribute
+/* Name.Builtin
+/* Name.Class
+/* Name.Constant
+/* Name.Entity
+/* Name.Exception
+/* Name.Function
+/* Name.Namespace
+/* Name.Tag
+/* Name.Variable
+/* Operator.Word
+/* Text.Whitespace
+/* Literal.Number.Float
+/* Literal.Number.Hex
+/* Literal.Number.Integer
+/* Literal.Number.Oct
+/* Literal.String.Backtick
+/* Literal.String.Char
+/* Literal.String.Doc
+/* Literal.String.Double
+/* Literal.String.Escape
+/* Literal.String.Heredoc
+/* Literal.String.Interpol
+/* Literal.String.Other
+/* Literal.String.Regex
+/* Literal.String.Single
+/* Literal.String.Symbol
+/* Name.Builtin.Pseudo
+/* Name.Variable.Class
+/* Name.Variable.Global
+/* Name.Variable.Instance
+/* Literal.Number.Integer.Long
