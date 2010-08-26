@@ -89,7 +89,7 @@
 				{% if page.title == 'Journal' %}
 					{%assign offset = 4%}
 				{%else%}
-					{% assign offset = 1 %}
+					{% assign offset = 0 %}
 				{%endif%}
 				{% for post in site.posts limit:10 offset:offset %}
 				<section class="article-link">
