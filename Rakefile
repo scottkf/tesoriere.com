@@ -3,8 +3,7 @@
 #   which was in turn adopted from Tate Johnson's Rakefile
 #   http://github.com/tatey/tatey.com/blob/master/Rakefile
 
-deploy_rb = File.expand_path('deploy.rb', __FILE__)
-require deploy_rb if File.file?(deploy_rb)
+host_var = YAML::load(File.open('deploy.yml'))
 
 require 'webrick'
 require 'directory_watcher'
@@ -70,7 +69,7 @@ desc 'Build, deploy, then clean.'
 task :deploy => :build do
   domain = "tesoriere.com"
 	printHeader "Deploying website to #{domain}"
-	sh 'rsync -rtzh --delete _site/ #{DEPLOY_USER}@#{DEPLOY_HOST}:~/#{domain}/'
+	sh "rsync -rtzh --delete _site/ #{host_var['DEPLOY_USER']}@#{host_var['DEPLOY_HOST']}:~/#{domain}/"
 	Rake::Task['clean'].execute
 end
 

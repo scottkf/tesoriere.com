@@ -4,4 +4,4 @@ _site
 tags
 stylesheets
 _includes/tag_cloud.html
-deploy.rb
+deploy.yml
