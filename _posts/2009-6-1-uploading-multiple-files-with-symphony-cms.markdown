@@ -5,7 +5,7 @@ tags:
 - symphony
 - symphony extension
 ---
-![Mass Upload Utility](http://tesoriere.com/assets/2009/6/2/Picture_1.png "mass upload utility")
+![Mass Upload Utility](http://tesoriere.com/images/assets/2009/6/2/Picture_1.png "mass upload utility")
 
 Many CMS' don't offer a way to manage picture galleries easily, and neither does symphony out of the box. But, after playing with symphony some, I decided that I liked it and the next project I would do would be with symphony. 
 

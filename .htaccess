@@ -9,7 +9,7 @@
   RewriteRule 2008/6/datamapper-many-to-many-parent-child-relationship$ 2008/06/17/datamapper-many-to-many-parent-child-relationship [L,R=301]
   RewriteRule 2008/6/mephisto-section-with-multiple-pages-on-homepage-static-intro-page$ 2008/06/21/mephisto-section-with-multiple-pages-on-homepage-static-intro-page
   RewriteRule 2009/4/mephisto-next-article-link-and-previous-article-link$ 2009/04/17/mephisto-next-article-link-and-previous-article-link
-  RewriteRule 2009/6/uploading-multiple-files-with-symphony-cms$ 2009/06/1/uploading-multiple-files-with-symphony-cms
+  RewriteRule 2009/6/uploading-multiple-files-with-symphony-cms$ 2009/06/01/uploading-multiple-files-with-symphony-cms
   RewriteRule 2009/6/dealing-with-database-concurrency-locking-in-the-symphony-cms$ 2009/06/13/dealing-with-database-concurrency-locking-in-the-symphony-cms
   RewriteRule 2010/6/gtx470-480-fermi-in-osx$ 2010/06/21-gtx470-480-fermi-in-osx
   RewriteRule 2009/6/using-a-3-0-iphone-on-t-mobile-get-mms-working$ 2009/06/16/using-a-3-0-iphone-on-t-mobile-get-mms-working
