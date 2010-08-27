@@ -51,7 +51,7 @@
 		</section>
 		<nav class="main">
 			<ul>
-				<li class="tesoriere"><a href="/" class="title">{% if page.title != 'Home' %}home{% else %}navigate{%endif%}</a></li>
+				<li><a href="/" style="height: 40px; ">home<span>where it started</span></a></li>
 				<li><a href="/tags/portfolio" style="height: 40px; ">projects<span>see the projects</span></a></li>
 				<li><a href="/journal" style="height: 20px; ">journal<span>recent happenings</span></a></li>
 				{% if page.title != 'Home' %}<li><a href="/archive" style="height: 20px">archives<span>older articles</span></a></li>{%endif%}
@@ -69,20 +69,15 @@
 		<section id="bottom">
 			{% if page.title != 'Archive' %}
 			{% if page.title == 'Home' %}
-			<article>
+			<article class="work">
 				<span class="title">recent work</span>
 				<ul>
-					{% for post in site.tags.portfolio limit: 2 %}
-					<li><a href="{{ post.url }}"><img src="/images/assets/{{ post.img }}" /></a></li>
+					{% for post in site.tags.portfolio limit: 3 %}
+					<li><a href="{{ post.url }}" title="{{ post.title }}"><img alt="{{ post.title }} image" src="/images/assets/{{ post.img }}" /></a></li>
 					{% endfor %}
 				</ul>
-				<a class="more" href="/tags/portfolio">see more projects</a>
+				<a class="more" href="/tags/portfolio">View more projects</a>
 			</article>
-			<aside>
-				<span class="title">contact</span>
-				mail. <a href="mailto:web@tesoriere.com">web@tesoriere.com</a><br />
-				currently <b>accepting</b> projects
-			</aside>
 			{% endif %}
 			<article class="recent">
 				<span class="title">recent entries</span>
@@ -96,10 +91,13 @@
 					<a href="{{ post.url }}" title="[Permalink] {{ post.url }}">{{ post.title }}</a>
 				</section>
 				{% endfor %}
-				<section class="more">
-					<a href="/archive" title="View the entire archive">View the entire archive of articles</a>
-				</section>
+				<a href="/archive" class="more" title="View the entire archive">View the entire archive of articles</a>
 			</article>
+			<aside>
+				<span class="title">contact</span>
+				<p>Interested in hiring me? Or perhaps you just need some more information? I'm currently interested in taking on new clients and new and interesting projects! <a href="mailto:web@tesoriere.com">Get in touch!</a>
+				</p>
+			</aside>
 			<!-- <aside>
 				<span class='title'>recent comments</span>
 				<div id="recentcomments" class="dsq-widget"><script type="text/javascript" src="http://disqus.com/forums/tesoriere/recent_comments_widget.js?num_items=5&hide_avatars=1&avatar_size=32&excerpt_length=200"></script></div>

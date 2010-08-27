@@ -10,7 +10,7 @@ Pfft, I'll save my virtual breath.
 
 I've finally got around to moving my website (this one you're looking at!) to [Jekyll][1]. Why? Well, **lots** of reasons! But, [they](http://embrangler.com/2010/03/embrangler-moving-to-jekyll/) [have](http://hobodave.com/2010/01/08/moving-to-jekyll-disqus/) [already](http://www.sriramkrishnan.com/blog/2009/08/moving-jekyll-disqus.html) been mentioned [numerous times](http://blog.rayapps.com/2010/08/09/moving-blog-from-wordpress-com-to-jekyll/). 
 
-However, if you don't know what [Jekyll is][1], I implore you to [visit the wiki][2] and learn about it, it's great fun if you're familiar with the terminal in osx, unix, *nix, or anything without a super fancy user interface. It lets you: 
+However, if you don't know what [Jekyll is][1], I implore you to [visit the wiki][2] and learn about it, it's great fun if you're familiar with the terminal in osx, unix, *nix, or just about anything without a super fancy user interface. It lets you: 
 
 - write your posts in Markdown or Textile (or anything you want to extend it to)
 - use plain old css and html
@@ -23,12 +23,17 @@ I came from mephisto, [which is dead now](http://techno-weenie.net/2010/6/23/you
 
 ## Boy that sure is *a lot* of purple. ##
 
-The design hasn't changed much, only tweaked a little. Let's face it, I'm no amazing designer, I usually hire other people for that. However, I've never found a great way to represent myself, so this will do for now. The *important* technical bit is that is uses HTML5 and CSS3 (via [compass, which is amazing][3]).
+The design hasn't changed much, only tweaked a little. Let's face it, I'm no amazing designer, I usually hire other people for that. However, I've never found a great way to represent myself, so this will do for now. The important *technical* bit is that is uses HTML5 and CSS3 (via [compass, which is amazing][3]).
 
 In order to maintain compatibility with older browsers, there's something called [modernizr][4], which translates HTML5 elements such as `<section>` and `<article>` into something older browsers can deal with. It really is as simple as adding this into your header:
 	
 {% highlight html %}
 <script src="/javascripts/modernizr-1.5.min.js"></script>
+{% endhighlight %}
+
+and this into your body tag
+{% highlight html %}
+<body class="no-js">
 {% endhighlight %}
 
 You can view my default layout for this site on [github, right here](http://github.com/scottkf/tesoriere.com/blob/master/_layouts/default.html). I make liberal use of the newer HTML5 elements (and `<video>` should I ever need it)!

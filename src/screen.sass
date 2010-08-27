@@ -17,26 +17,31 @@ body
   $content-prepend: 2
   $content-columns: ceil(2 * $blueprint-grid-columns / 3) - $content-prepend - 2
 
-
   +blueprint-typography(true)
   
+  color: #222
   background: $body-background-color url(../images/top-background.jpg) no-repeat
-  font-family: Calibri,Arial,Helvetica Neue,Helvetica,sans-serif
   
   a, a:visited
     color: $link-color
+    font-size: 1.05em
   
   .title
     font-family: Calibri,Arial,Helvetica Neue,Helvetica,sans-serif
     color: $title-color
     display: block
     font-size: 3.5em
-    letter-spacing: -0.07em
     line-height: .5em
-    margin-left: -0.1em
     margin-bottom: .2em
+    font-variant: small-caps
+    color: $alt-link-color
+  a.title
+    color: $title-color
+    color: $alt-link-color
+    text-decoration: none
   a.title:hover
     color: $title-color
+    text-decoration: none
   #container
     +container
     background: url(../images/top-background.jpg) no-repeat
@@ -67,32 +72,43 @@ body
     +column($content-columns)
     +prepend($content-prepend)
     article.main
-      font-size: 1.5em
-      line-height: 1.6em
+      font-size: 2.5em
+      letter-spacing: -0.04em
+      color: #666
+      line-height: 1.3em
   nav.main
     +column($nav-columns, true)
     +prepend($nav-prepend)
     #search, #tags
       display: none
+    .title
+      color: $alt-link-color
+      display: block
+      margin-bottom: 0.5em
+      &:hover
+        color: $alt-link-color
     ul
       list-style-type: none
       margin: 0em
       padding-left: 0em
       li
-        font-size: 1.5em
-        &.tesoriere
-          a
-            color: $title-color
+        font-size: 1.6em
+        letter-spacing: 0.08em
+        margin-bottom: 0.5em
       a
         text-decoration: none
+        color: $link-color
+        text-transform: uppercase
+        span
+          letter-spacing: normal
         &:hover span
-          color: $link-color
       span
+        text-transform: lowercase 
         margin-top: -.5em
         display: block
         // border-top: 1px solid #EDE2AE
         font-size: .8em
-        color: #A98E6A
+        color: #222
       
   #bottom
     margin-bottom: 3em
@@ -100,30 +116,37 @@ body
       +column($content-columns)
       +prepend($content-prepend)
       .more
-        display: block
-        +float-right
-        font-size: 1.1em
+        font-size: 1.5em
         margin-right: 1em
         margin-top: 1em
+        &:hover
+          color: $title-color
       ul
         +horizontal-list
         margin-top: 1em
         li
           padding: 0px
-          margin-right: .7em
-          border: 1px solid $content-background-color
-          height: 110px
-        li:hover 
-          border: 1px solid #888
+          margin: 0px
+          margin-right: 12px
+          a
+            display: block
+            height: 143px
+            border: 1px solid #ddd
+            &:hover 
+              border: 1px solid #888
         img
           height: auto
-          width: 200px
+          width: 220px
+    article.work
+      +column($content-columns + $nav-columns + $nav-prepend)
+      +prepend($content-prepend)
+      +append($content-prepend)
+      margin-bottom: 2em
+    
     article.recent
       +prepend($content-prepend)
-      +column($content-columns + $nav-columns)
-      +append($nav-append)
+      +column($content-columns + 1)
       .more
-        font-size: 1.2em
         float: none
         display: block
         margin-top: 7px
@@ -137,11 +160,15 @@ body
         display: block
         border-bottom: 1px solid $border-color
         text-decoration: none
-        font-size: 1.1em
+        font-size: 1.2em
+        &:hover
+          color: #333
     aside
       +column($nav-columns, true)
-      +prepend($nav-prepend)
-      
+      +prepend($nav-prepend - 1)
+      p
+        font-size: 1.3em
+        font-family: "Georgia", serif
 
       
   footer
@@ -162,7 +189,7 @@ body
       bottom: 11px
       position: relative
   .red
-    color: #CA1E1E
+    color: $alt-link-color
   .yellow
     color: #8A5500
   .green
@@ -189,7 +216,6 @@ body#articles
     
   
   .title
-    font-size: 2.3em
   
   h1.title
     margin-bottom: 1em
@@ -207,10 +233,11 @@ body#articles
       font-size: 1.8em
       line-height: 1em
       font-weight: bold
-      font-family: 'Lucida Grande', 'Arial', sans-serif
+      font-family: 'Calibri', 'Arial', sans-serif
       a
         text-decoration: none
         text-transform: uppercase
+        color: $alt-link-color
         &:hover
           text-decoration: underline
           color: #444
@@ -238,6 +265,7 @@ body#articles
         height: auto
         border: 1px solid #ccc
       p
+        font-family: Georgia, serif
         font-size: 1.25em
         line-height: 1.4em
         margin-bottom: 1.4em
@@ -293,10 +321,13 @@ body#articles
     +append($nav-append)
     
     ul li span
-    ul li 
+    ul li
+      font-size: 1.3em
       margin-bottom: 0em
     #search, #tags
       display: block
+    #tags
+      a
       
     ul, section
       margin-bottom: 2em

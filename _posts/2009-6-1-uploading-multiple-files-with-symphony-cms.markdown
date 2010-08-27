@@ -4,6 +4,8 @@ title: Uploading multiple files with Symphony CMS
 tags:
 - symphony
 - symphony extension
+- portfolio
+img: mass-upload-utility.jpg
 ---
 ![Mass Upload Utility](http://tesoriere.com/images/assets/2009/6/2/Picture_1.png "mass upload utility")
 
@@ -11,4 +13,4 @@ Many CMS' don't offer a way to manage picture galleries easily, and neither does
 
 So I created a plugin (in symphony: extension) that allows you to upload multiple files, and create entries (in this example, gallery items, or rows in the database, etc) to allow you to accomplish this easily.
 
-You can download it at [Github](http://github.com/scottkf/mass-upload-utility/tree/master).
+You can download it at [my Github repo](http://github.com/scottkf/massuploadutility).

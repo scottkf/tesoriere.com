@@ -5,7 +5,7 @@ tags:
 - keep flippin
 - portfolio
 - symphony
-img: keep-flippin-thumb.png
+img: keepflippin.jpg
 ---
 <a href="http://tesoriere.com/images/assets/2009/6/15/Picture_1.png" rel="portfolio"><img alt="keep flippin picture" title="project picture" src="http://tesoriere.com/images/assets/2009/6/15/Picture_1.png" title="keep flippin website" alt="keep flippin website"></a>
 
