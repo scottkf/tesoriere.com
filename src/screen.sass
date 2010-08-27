@@ -25,12 +25,15 @@ body
   a, a:visited
     color: $link-color
     font-size: 1.05em
+    &:hover
+      color: $hover-color
   
   .title
-    font-family: Calibri,Arial,Helvetica Neue,Helvetica,sans-serif
+    font-family: "Georgia", "Times", sans-serif
+    font-family: "Calibri", "Helvetica Neue", "Helvetica", sans-serif
     color: $title-color
     display: block
-    font-size: 3.7em
+    font-size: 2.4em
     line-height: .5em
     margin-bottom: .2em
     font-variant: small-caps
@@ -72,10 +75,12 @@ body
     +column($content-columns)
     +prepend($content-prepend)
     article.main
-      font-size: 1.7em
-      letter-spacing: -0.04em
-      color: #666
-      line-height: 1.3em
+      font-size: 2.1em
+      margin-bottom: 1em
+      color: #777
+      line-height: 1.5em
+      font-family: "Georgia", "times", serif
+      letter-spacing: -0.05em
   nav.main
     +column($nav-columns, true)
     +prepend($nav-prepend)
@@ -86,22 +91,33 @@ body
       display: block
       margin-bottom: 0.5em
       &:hover
-        color: $alt-link-color
+        color: $link-color
     ul
       list-style-type: none
       margin: 0em
       padding-left: 0em
       li
-        font-size: 1.6em
-        letter-spacing: 0.08em
+        font-size: 1.5em
+        letter-spacing: 0.05em
         margin-bottom: 0.5em
+        height: 2.5em
+        &.selected
+          a
+            color: $title-color
+            span
+              color: $title-color
       a
+        display: block
         text-decoration: none
         color: $link-color
         text-transform: uppercase
+        font-family: "Calibri", "Helvetica Neue",Arial,Helvetica,sans-serif
         span
           letter-spacing: normal
+        &:hover
+          color: $hover-color
         &:hover span
+          color: $hover-color
       span
         text-transform: lowercase 
         margin-top: -.5em
@@ -141,11 +157,11 @@ body
       +column($content-columns + $nav-columns + $nav-prepend)
       +prepend($content-prepend)
       +append($content-prepend)
-      margin-bottom: 2em
+      margin-bottom: 5em
     
     article.recent
       +prepend($content-prepend)
-      +column($content-columns + 1)
+      +column($content-columns)
       .more
         float: none
         display: block
@@ -162,13 +178,14 @@ body
         text-decoration: none
         font-size: 1.2em
         &:hover
-          color: #333
+          color: $hover-color
+          text-decoration: underline
     aside
       +column($nav-columns, true)
-      +prepend($nav-prepend - 1)
+      +prepend($nav-prepend)
       p
         font-size: 1.3em
-        font-family: "Georgia", serif
+        font-family: "Helvetica Neue",Arial,Helvetica,sans-serif
 
       
   footer
@@ -234,6 +251,7 @@ body#articles
       line-height: 1em
       font-weight: bold
       font-family: 'Calibri', 'Arial', sans-serif
+      font-family: "Georgia", "Times", sans-serif
       a
         text-decoration: none
         text-transform: uppercase
@@ -256,7 +274,8 @@ body#articles
     section.content
       h2
         font-weight: normal
-        font-size: 1.7em
+        font-size: 1.8em
+        font-family: "Georgia", "times", serif
       ul
         font-size: 1.2em
         padding-left: 2.5em
@@ -265,7 +284,7 @@ body#articles
         height: auto
         border: 1px solid #ccc
       p
-        font-family: Georgia, serif
+        font-family: "Helvetica Neue",Arial,Helvetica,sans-serif
         font-size: 1.25em
         line-height: 1.4em
         margin-bottom: 1.4em

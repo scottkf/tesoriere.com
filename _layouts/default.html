@@ -51,11 +51,11 @@
 		</section>
 		<nav class="main">
 			<ul>
-				<li><a href="/" style="height: 40px; ">home<span>where it started</span></a></li>
-				<li><a href="/tags/portfolio" style="height: 40px; ">projects<span>see the projects</span></a></li>
-				<li><a href="/journal" style="height: 20px; ">journal<span>recent happenings</span></a></li>
-				{% if page.title != 'Home' %}<li><a href="/archive" style="height: 20px">archives<span>older articles</span></a></li>{%endif%}
-				<li><a href="mailto:web@tesoriere.com" style="height: 20px; ">contact<span class="green">contact via email</span></a></li>
+				{% unless page.title == 'Home' %}<li><a href="/">home<span>the beginning</span></a></li>{%endunless%}
+				<li{% if page.title contains 'portfolio'%} class="selected"{%endif%}><a href="/tags/portfolio">projects<span>encyclopedia projectia</span></a></li>
+				<li{% if page.title == 'Journal'%} class="selected"{%endif%}><a href="/journal">journal<span>musings and un-musings</span></a></li>
+				{% if page.title != 'Home' %}<li{% if page.title == 'Archive'%} class="selected"{%endif%}><a href="/archive">archives<span>aged to perfection</span></a></li>{%endif%}
+				<li><a href="mailto:web@tesoriere.com">contact<span class="green">drop me a line</span></a></li>
 			</ul>			
 			<section id="search">
 				<span class="title">search</span>
@@ -95,7 +95,7 @@
 			</article>
 			<aside>
 				<span class="title">contact</span>
-				<p>Interested in hiring me? Or perhaps you just need some more information? I'm currently interested in taking on new clients and new and interesting projects! <a href="mailto:web@tesoriere.com">Get in touch!</a>
+				<p>Interested in hiring me? Or perhaps you just need some more information? I'm currently interested in taking on new clients and new and interesting projects.<br /><a href="mailto:web@tesoriere.com">Get in touch!</a>
 				</p>
 			</aside>
 			<!-- <aside>

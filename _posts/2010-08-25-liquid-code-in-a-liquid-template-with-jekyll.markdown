@@ -4,7 +4,7 @@ title: Highlighting liquid code in a liquid template with Jekyll
 tags: liquid jekyll
 ---
 
-This is a somewhat confusing thing to achieve, highlighting [liquid templating code][1] in a code block, and made even more confusing by the title. So take this example from [this article about I wrote about mephisto][2]:
+This is a somewhat confusing thing to achieve, highlighting [liquid templating code][1] in a code block, and made even more confusing by the title. Take this example from [this article about I wrote about mephisto][2]:
 
 {% highlight html %}
 #previous link
@@ -17,7 +17,7 @@ This is a somewhat confusing thing to achieve, highlighting [liquid templating c
 {% endhighlight %}
 
 
-To actually display the liquid template code you have to get crazy with the curly brackets, so the code in the markdown (in my case) file actually looks like:
+To actually display the liquid template code you have to get crazy with the curly brackets; the code in the markdown (in my case) file actually looks like:
 
 {%highlight html%}
 #previous link
@@ -29,7 +29,7 @@ To actually display the liquid template code you have to get crazy with the curl
 {% endhighlight %}
 
 
-Typing that above lead to a sweet infinity effect, but do yourself a favor and don't copy/paste that, just [take it from this post on github][3], because to actually type that I had to use `&ldquo;`. And of course a *proper* way to do would be to extend markdown/textile in pygments to support the liquid templating language, but that's for another day.
+Typing that above leads to a sweet infinity effect, but do yourself a favor and don't copy/paste that, just [take it from this post on github][3], because to actually type that I had to use `&ldquo;`. Of course a *proper* way to do would be to extend markdown/textile in pygments to support the liquid templating language, but that's for another day.
 
 
 
