@@ -77,7 +77,7 @@ task :new do
 	title = ask("Title: ")
 	article = {"title" => title, "layout" => "post"}.to_yaml
 	article << "---"
-	fileName = title.gsub(/[\s \( \) \? \[ \]]/, '-').downcase
+	fileName = title.gsub(/[\s \( \) \? \[ \] \, \: \< \>]/, '-').downcase
 	path = "_posts/#{Time.now.strftime("%Y-%m-%d")}#{'-' + fileName}.markdown"
 	unless File.exist?(path)
 		File.open(path, "w") do |file| 
