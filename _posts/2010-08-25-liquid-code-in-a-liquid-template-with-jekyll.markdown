@@ -1,6 +1,6 @@
 --- 
 layout: post
-title: Highlighting liquid code in a liquid template with Jekyll
+title: Highlighting liquid code in a liquid template with Jekyll (Escape a liquid templating tag)
 tags: liquid jekyll
 ---
 

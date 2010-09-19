@@ -45,13 +45,14 @@ title: "tagged: #{tag}"
 syntax-highlighting: yes
 ---
   <h1 class="title">#{tag}</h1>
-  {% for post in site.posts %}
-		{% for tag in post.tags %}
-			{%if tag == "#{tag}" %}
-				{%include post.html%}
-			{%endif%}
-		{%endfor%}
-  {% endfor %}
+	
+	{{ "{% for post in site.posts " }}%}
+		{{ "{% for tag in post.tags " }}%}
+			{{ "{% if tag == '#[tag]'" }}%}
+				{{ "{% include post.html " }}%}
+			{{ "{% endif " }}%}
+		{{ "{% endfor " }}%}
+	{{ "{% endfor " }}%}
 HTML
 
     FileUtils.mkdir_p("tags/#{tag}")
@@ -62,6 +63,8 @@ HTML
   puts 'Done.'
 end	
 {% endhighlight %}
+
+Note the line `if tag == "#[tag]"` should be `if tag == "#{tag}"` but liquid 2.0 doesn't support escaping, and my ghetto method doesn't work. So just pull the entire function from github.
 
 ### [View my entire Rakefile @github](http://github.com/scottkf/tesoriere.com/blob/master/Rakefile#L100-137). ###
 
