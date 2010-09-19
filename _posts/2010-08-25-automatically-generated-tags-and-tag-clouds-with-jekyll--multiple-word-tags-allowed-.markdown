@@ -37,22 +37,22 @@ task :tags  => :tag_cloud do
   # Remove tags directory before regenerating
   FileUtils.rm_rf("tags")
 
-  # have to parse the liquid template here and not in jekyll because of spaces in tags
-  post_template = IO.read("_includes/post.html")
-
   site.tags.sort.each do |tag, posts|
-    html = <<-HTML
+  	html = <<-HTML
 ---
 layout: default
 title: "tagged: #{tag}"
 syntax-highlighting: yes
 ---
   <h1 class="title">#{tag}</h1>
+  {% for post in site.posts %}
+		{% for tag in post.tags %}
+			{%if tag == "#{tag}" %}
+				{%include post.html%}
+			{%endif%}
+		{%endfor%}
+  {% endfor %}
 HTML
-
-  posts.sort! { |a,b| b.date <=> a.date }.each do |p|
-    html << Liquid::Template.parse(post_template).render("post" => p.to_liquid, "content" => p.transform().to_s)
-  end
 
     FileUtils.mkdir_p("tags/#{tag}")
     File.open("tags/#{tag}/index.html", 'w+') do |file|

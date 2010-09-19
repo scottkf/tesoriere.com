@@ -4,7 +4,7 @@
 			<div class="date"><span>Stamped: {{ post.date | date_to_string }} {% if post.comments_disabled != true %} |</span> <a href="{{ post.url }}#disqus_thread">Show comments</a>{% endif %}</div>
 		</header>
 		<section class="content">
-			{% if page.title == 'Journal' %}
+			{% if page.title == 'Journal' or page.title contains "tagged:" %}
 			{{ post.content }}
 			{% elsif page.title == "Archive" %}
 			{{ post.content | strip_html | truncate: 200 }}
