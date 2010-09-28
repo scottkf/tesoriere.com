@@ -3,15 +3,18 @@
 #   which was in turn adopted from Tate Johnson's Rakefile
 #   http://github.com/tatey/tatey.com/blob/master/Rakefile
 
-host_var = YAML::load(File.open('deploy.yml'))
 
 require 'webrick'
 require 'directory_watcher'
 require "term/ansicolor"
 require "jekyll"
 require "rdiscount"
+require "yaml"
 include Term::ANSIColor
 include WEBrick
+
+host_var = YAML::load(File.open('deploy.yml'))
+
 
 task :default => :develop
  
@@ -155,7 +158,7 @@ task :tag_cloud do
   site.tags.sort.each do |tag, posts|
     s = posts.count
     font_size = ((20 - 10.0*(max_count-s)/max_count)*2).to_i/2.0
-    html << "<a href=\"/tags/#{tag}\" title=\"Postings tagged #{tag}\" style=\"font-size: #{font_size}px; line-height:#{font_size}px\">#{tag}</a> "
+    html << "<a href=\"/tags/#{tag.gsub(/ /, "%20")}\" title=\"Postings tagged #{tag}\" style=\"font-size: #{font_size}px; line-height:#{font_size}px\">#{tag}</a> "
   end
   File.open('_includes/tag_cloud.html', 'w+') do |file|
     file.puts html
