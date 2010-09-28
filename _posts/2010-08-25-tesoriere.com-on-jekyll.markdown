@@ -1,7 +1,10 @@
 --- 
 layout: post
 title: Migrating from mephisto to jekyll
-tags: jekyll design compass 
+tags: 
+- jekyll 
+- design 
+- compass 
 ---
 
 ## My life story: ##

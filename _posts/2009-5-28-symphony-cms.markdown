@@ -1,6 +1,8 @@
 --- 
 layout: post
 title: Symphony CMS
+tags:
+- symphony
 ---
 <img src="http://tesoriere.com/assets/2009/5/29/kf.jpg" /><br /><br />
 

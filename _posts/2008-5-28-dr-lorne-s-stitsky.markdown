@@ -1,7 +1,9 @@
 --- 
 layout: post
 title: dr lorne s. stitsky
-tags: mephisto portfolio
+tags: 
+- mephisto 
+- portfolio
 ---
 <a title="drstitsky.com" rel="portfolio" href="http://lh4.ggpht.com/scott.tesoriere/SDQbDihl73I/AAAAAAAAAWM/OA1RGfEmKig/Picture%201.png?imgmax=720"><img style="cursor:pointer; cursor:hand;" src="http://bp1.blogger.com/_jMVuxhHFgcI/SDQbDihl73I/AAAAAAAAAWM/s_IoMWewhFc/s400/Picture+1.png" border="0" alt="picture of drstitsky.com" id="BLOGGER_PHOTO_ID_5202813217141026674" /></a>
 

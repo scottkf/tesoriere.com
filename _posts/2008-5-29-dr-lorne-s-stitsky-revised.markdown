@@ -1,7 +1,9 @@
 --- 
 layout: post
 title: dr lorne s. stitsky - revised
-tags: portfolio mephisto
+tags: 
+- portfolio 
+- mephisto
 ---
 <a href="http://www.tesoriere.com/images/assets/2008/5/29/Picture_1.png" rel="portfolio"><img src="http://www.tesoriere.com/images/assets/2008/5/29/Picture_1.png" style="width:400px;height:auto" /></a>
 

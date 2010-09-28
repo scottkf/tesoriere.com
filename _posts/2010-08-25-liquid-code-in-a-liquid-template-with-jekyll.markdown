@@ -1,7 +1,9 @@
 --- 
 layout: post
 title: Highlighting liquid code in a liquid template with Jekyll (Escape a liquid templating tag)
-tags: liquid jekyll
+tags: 
+- liquid 
+- jekyll
 ---
 
 This is a somewhat confusing thing to achieve, highlighting [liquid templating code][1] in a code block, and made even more confusing by the title. Take this example from [this article about I wrote about mephisto][2]:

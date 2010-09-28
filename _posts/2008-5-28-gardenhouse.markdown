@@ -1,7 +1,9 @@
 --- 
 layout: post
 title: gardenhouse
-tags: textpattern portfolio
+tags: 
+- textpattern 
+- portfolio
 ---
 <a title="Gardenhousedecor.net" rel="portfolio" href="http://lh4.ggpht.com/scott.tesoriere/SDQN4ihl72I/AAAAAAAAAWE/FhzYEivy5vo/Picture%201.png?imgmax=800"><img alt="picture of gardenhousedecor.net" src="http://lh4.ggpht.com/scott.tesoriere/SDQN4ihl72I/AAAAAAAAAWE/FhzYEivy5vo/s400/Picture%201.png" /></a>
 

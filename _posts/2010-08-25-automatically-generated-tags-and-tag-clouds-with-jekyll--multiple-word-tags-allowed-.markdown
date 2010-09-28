@@ -1,7 +1,9 @@
 --- 
 layout: post
 title: Automatically generated tags and tag clouds with Jekyll (multiple word tags allowed)
-tags: jekyll rakefile
+tags: 
+- jekyll 
+- rakefile
 ---
 
 Jekyll is a great thing, and supports tags right out of the box, but in order to get urls like in mephisto, /tags/something here, you have to either add an extension ([which do exist, though I haven't tried][1]), or generate them with the Rakefile, or however really, but I chose the Rakefile. Luckily [raimonds simanovskis had already done so][2], but his solution didn't support tags with spaces, which I had used in mephisto, and to not break compatibility when switching, I had to edit the relevant part of his Rakefile to support tags with spaces.

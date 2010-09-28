@@ -1,7 +1,10 @@
 --- 
 layout: post
 title: datamapper - many-to-many parent child relationship
-tags: datamapper habtm merb
+tags: 
+- datamapper 
+- habtm 
+- merb
 ---
 I started playing around with datamapper to see if I could model an many to many parent/child relationship (self-referential habtm?) for an upcoming project. The plan was to use sproutcore for the gui (once I figured it out!), and merb as a webservice that it interacts with.  
 
