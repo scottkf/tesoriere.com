@@ -1,6 +1,6 @@
 --- 
 layout: post
-title: Rails 3, Self-referential has_many :through Parent<->Child relationship modelling
+title: Rails 3, Self-referential has_many :through Parent&lt;->Child relationship modelling
 tags:
 - rails
 - self join
