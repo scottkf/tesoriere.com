@@ -2,9 +2,9 @@
 layout: post
 title: When should I use Ruby on Rails, or something else? (Comparing Symphony and Rails)
 tags:
-- Rails
-- Symphony
-- Development
+- rails
+- symphony
+- development
 ---
 
 When beginning a new project, the first thing I come across is what software/language/methodology do I use to complete the project? The answer is quite simple, _it depends_. 
@@ -41,7 +41,7 @@ _However_, [Symphony][1] could use some explanation. Symphony's models are calle
 
 ## Go on then, answer the original question
 
-How I decide which to use basically involves me looking at this table and deciding how I feel like torturing myself for that certain project. Most of them time the biggest issues are whether or not it contains a lot of logic that needs to be tested, and which template language I want to use.
+How I decide which to use basically involves me looking at this table and deciding how I feel like torturing myself for that certain project. Most of the time the biggest issues are whether or not it contains a lot of logic that needs to be tested, and which template language I want to use.
 
 <table>
 	<tr><td></td><th><strong>Rails</strong></th><th><strong>Symphony</strong></th></tr>
