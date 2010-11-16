@@ -1,0 +1,21 @@
+--- 
+layout: post
+title: GTX 460 in Mac OSX 10.6.5 (or osx86)
+tags: 
+- osx
+- hackintosh
+- osx86
+---
+
+## But... But... That's illegal! 
+
+Actually, no, it's not. I'm not selling, nor condoning the use or creation of a hackintosh. If you however, are a hobbyist and are curious, the **GTX 460** family of nVidia graphic cards now work in Snow Leopard (osx86). 
+
+All one has to do is [go here][1] and [download the latest drivers for Snow Leopard][1]. This, however, requires you to update to 10.6.5, and use an appropriate boot loader with the following in com.apple.boot.plist:
+
+    <key>GraphicsEnabler</key>
+		<string>Yes</string>
+
+More information can be found on [insanelymac](http://www.insanelymac.com/forum/index.php?showtopic=214219&st=960).
+
+  [1]: http://www.nvidia.com/object/quadro-macosx-256.01.00f03-driver.html
