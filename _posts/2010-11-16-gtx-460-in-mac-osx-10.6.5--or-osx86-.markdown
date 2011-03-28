@@ -7,6 +7,10 @@ tags:
 - osx86
 ---
 
+## Update:
+
+New drivers can be found [here at my latest article about the GTX 460](/2011/03/28/random-freeze-fix-for-gtx-460-in-10.6--osx86-/), and solved most of my problems with random freezes
+
 ## But... But... That's illegal! 
 
 Actually, no, it's not. I'm not selling, nor condoning the use or creation of a hackintosh. If you however, are a hobbyist and are curious, the **GTX 460** family of nVidia graphic cards now work in Snow Leopard (osx86). 
