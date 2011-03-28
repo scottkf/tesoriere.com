@@ -1,6 +1,10 @@
 --- 
 layout: post
 title: Random Freeze Fix for GTX 460 in 10.6 (osx86)
+tags: 
+- osx
+- hackintosh
+- osx86
 ---
 
 ## So far, anyway!
