@@ -58,7 +58,24 @@
 				<li><a href="http://projects.tesoriere.com/public">client access<span>progress!<span></li>
 				{%endif%}
 				<li><a href="mailto:web@tesoriere.com">contact<span class="green">drop me a line</span></a></li>
-			</ul>			
+			</ul>
+			{% unless page.title contains 'portfolio' %}
+			{%if page.title != 'Home' %}
+			<section id="adsense">
+				<script type="text/javascript"><!--
+				google_ad_client = "ca-pub-3702252315546866";
+				/* Tesoriere.com journal */
+				google_ad_slot = "2621094104";
+				google_ad_width = 160;
+				google_ad_height = 600;
+				//-->
+				</script>
+				<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+			</section>	
+			{%endif%}
+			{%endunless%}
 			<section id="search">
 				<span class="title">search</span>
 				{% include search.html %}
