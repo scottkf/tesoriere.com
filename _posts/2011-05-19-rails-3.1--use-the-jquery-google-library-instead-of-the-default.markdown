@@ -1,0 +1,40 @@
+--- 
+layout: post
+title: Rails 3.1, use the jQuery Google Library instead of the default
+tags:
+- rails
+- jquery
+---
+
+Rails 3.1 supports all sorts of fun new technologies out of the box, Coffeescript, Sprockets and more. However, the default jQuery 1.6.1 library that is included by default isn't minified, as well as the jQuery-rails library. This results in a whopping 250kb javascript overhead.
+
+To reduce the overhead, and use the Google jQuery library instead, you have to make a couple changes. First, in `app/assets/javascripts/application.js`:
+
+{% highlight text %}
+//= require jquery
+//= require jquery_ujs
+//= require_tree .
+{% endhighlight %}
+
+Change this to:
+
+{% highlight text %}
+//= require jquery_ujs
+//= require_tree .
+{% endhighlight %}
+
+And in your `app/views/layouts/application.html.*` change the header by adding an additional line:
+
+{% highlight erb %}
+<head>
+	<title>Steamhours</title>
+	<%= stylesheet_link_tag    "application" %>
+	<%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+</head>
+{% endhighlight %}
+
+Note, you can't just add `//= require https://../jquery.min.js` because sprockets builds the resulting js file each time Rails receives a request (assuming it has changed). It really wouldn't make much sense to download the api and redistribute it, it would defeat the point of even using it in the first place.
+
+All the additions in Rails 3.1 are wonderful, go try them out!
