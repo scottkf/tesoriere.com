@@ -22,7 +22,7 @@ After having to revisit a calendar of events and kind of [hacking my way through
  5. Attach a data-source pulling whatever events you wish, you can limit it by date to reduce the amount of entries, but **do not** change the grouping.
  6. Finally, in the page you wish to drop the calendar in, the php xmlns must be added to the `<stylesheet>` tag, and the function to generate the calendar must be used. An example page would look like is below. The second parameter next to the function is the name of the data source. The third is an optional path to link to the event by id so you provide the root path (if none is provided it will just be listed as text). The fourth is an optional class to provide the table with, the default is calendar.
 
-
+{%highlight xml%}
  		<?xml version="1.0" encoding="UTF-8"?>
 		<xsl:stylesheet version="1.0"
 		        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -38,6 +38,7 @@ After having to revisit a calendar of events and kind of [hacking my way through
 		  'calendar')" disable-output-escaping="yes"/><br />
 		</xsl:template>
 		</xsl:stylesheet>
+{%endhighlight%}
 
 *Bugs/features*:
 
