@@ -1,0 +1,66 @@
+--- 
+layout: post
+title: Rails 3.1 &#8212; Fixing the 'ajax:loading' event
+tags:
+- rails
+- ajax
+- jquery
+---
+
+
+Having difficulty getting the `ajax:loading` event to trigger? All you have to do is use `ajax:beforeSend` instead! An example:
+
+## Our example coffeescript:
+
+{% highlight javascript %}
+$ ->
+	toggleLoading = -> $("#loading").toggle()
+	$("#loading").toggle()
+	$("form[data-remote]")
+		.bind('ajax:beforeSend', toggleLoading)
+		.bind('ajax:complete', toggleLoading)
+		.bind('ajax:success', (event, data, status, xhr) ->
+			$("#list").html($.parseJSON(data))
+		)
+		.bind('ajax:error', (xhr, status, error) ->
+		)
+{%endhighlight%} 
+
+## Our form:
+
+{% highlight erb %}
+<%= form_for @profile, :id => "hours_form", :url => {:action => :show }, :remote => true do |f| %>
+	
+	<%= field_set_tag do %>
+		<%= f.label :profile_name %>
+		<%= f.text_field :profile_name %>
+	<% end %>
+	
+	<%= submit_tag 'Submit', :id => "submit" %>
+	
+<%end%>
+<div id="loading">
+Loading...
+</div>
+{%endhighlight%}
+
+## And finally, the controller:
+
+{%highlight ruby%}
+class ProfilesController < ApplicationController
+
+  def index
+    @profile = Profile.new
+  end
+  
+  def show
+    @profile = Profile.find(p.id, :include => :games)
+    
+    respond_to do |format|
+      format.html
+      format.js { render :json => @profile }
+    end
+  end
+end
+
+{%endhighlight%}

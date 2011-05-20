@@ -1,6 +1,6 @@
 --- 
 layout: post
-title: Rails 3.1, use the jQuery Google Library instead of the default
+title: Rails 3.1 &#8212; use the jQuery Google Library instead of the default
 tags:
 - rails
 - jquery
