@@ -1,6 +1,6 @@
 --- 
 layout: post
-title: Rails 3, Self-referential has_many :through Parent&lt;->Child relationship modelling
+title: Rails 3.x &#8212; Self-referential has_many :through Parent&lt;->Child relationship modelling
 tags:
 - rails
 - self join
@@ -33,11 +33,24 @@ end
 
 #App/Models/Person.rb
 class Person < ActiveRecord::Base
-  has_many :parent_child_relationships, :class_name => "ParentRelationship", :foreign_key => :parent_id, :dependent => :destroy 
-  has_many :parents, :through => :parent_child_relationships, :source => :child
   
-  has_many :child_parent_relationships, :class_name => "ParentRelationship", :foreign_key => :child_id, :dependent => :destroy
-  has_many :children, :through => :child_parent_relationships, :source => :parent
+  validates_presence_of :first_name, :last_name
+
+  has_many     :parent_child_relationships,
+               :class_name            => "PersonRelationship",
+               :foreign_key           => :child_id,
+               :dependent             => :destroy
+  has_many     :parents,
+               :through               => :parent_child_relationships,
+               :source                => :parent
+
+  has_many     :child_parent_relationships,
+               :class_name            => "PersonRelationship",
+               :foreign_key           => :parent_id,
+               :dependent             => :destroy
+  has_many     :children,
+               :through               => :child_parent_relationships,
+               :source                => :child
 end
 
 
