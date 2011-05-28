@@ -1,0 +1,13 @@
+--- 
+layout: post
+title: Rails 3.1 &#8212; SQL logging to STDOUT during testing (with rspec, test::unit, or cucumber)
+tags:
+- rails
+- quicktip
+---
+
+![test.rb](/images/assets/2011/rails31-env-stdout.jpg "Test.rb")
+
+## Seemingly random SQL logging?
+
+A simple fix, you probably have `config.logger = Logger.new(STDOUT)` in your test.rb or application.rb!

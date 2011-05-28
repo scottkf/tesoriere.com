@@ -1,0 +1,18 @@
+--- 
+layout: post
+title: Rails 3.1 &#8212; Using ERB/HAML/etc within a Coffeescript JS file
+tags:
+- rails
+- coffeescript
+- quicktip
+---
+
+Need to use some information from your application in your new Coffeescript file? All you have to do is rename it with .erb.coffee or .<builder>.coffee instead of .coffee. This lets you do things like 
+
+{% highlight javascript %}
+$ ->
+	$('#currency_select').change ->
+		window.location = window.location.pathname.replace(/^\/(<%=Country.currencies.keys.join '|'%>)|(?!(<%=Country.currencies.keys.join '|'%>))\//i, '/'+$(this + "option:selected").text())
+{% endhighlight %}
+
+The best part about it is that Rails still knows when to generate the file, it doesn't do it each time! The only thing you can't directly access are the routes (e.g. root_path(), etc), but a gem called [_js:routes_](https://github.com/mtrpcic/js-routes/blob/master/js.rake) can take care of that for you. 

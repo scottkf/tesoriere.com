@@ -1,0 +1,18 @@
+--- 
+layout: post
+title: "Rails 3.1 &#8212; 'load_missing_contant': Expected ... to define ... (LoadError)"
+tags:
+- rails
+- quicktip
+---
+
+## Seeing this error?
+
+This is a simple one to fix. I had two Classes of the same name but with different scopes, one was a model and the other a class in a separate module under lib. You have three options in this scenario:
+
+1. Choose more appropriate names
+
+2. Move the module out of lib into a gem
+
+3. Rename the filename of the Class under the lib/ folder, while retaining the same class name.
+
