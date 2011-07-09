@@ -11,7 +11,7 @@ img: wastedonsteam.png
 
 ## I was always curious...
 
-[Steam][1] has existed for about 8 years now, and I was always curious how much time and money I've <strike>wasted</strike> spent with the service. I created a webapp to calculate how many hours have been spent as well as an approximate cost of an account's worth. There are gaps in steam's data, so it's not entirely accurate, but it's a good estimate.
+[Steam][1] has existed for about 8 years now, and I was always curious how much time and money I've <strike>wasted</strike> spent with the service. I created a webapp to calculate how many hours have been spent as well as an approximate cost of an account's worth. There are gaps in steam's data, so it's not entirely accurate, but it's a good estimate. [Go on][3], check it out! [http://wastedonsteam.com][3]
 
 ## What's it made out of?
 
@@ -50,3 +50,4 @@ end
 
 [1]: http://steampowered.com
 [2]: http://heroku.com
+[3]: http://wastedonsteam.com
