@@ -15,7 +15,7 @@ img: wastedonsteam.png
 
 ## What's it made out of?
 
-It's built using Rails 3.1, which was the other main motivator for this. It's hosted on [heroku][2], uses gruff to make simple price graphs, nokogiri to update the data, the money class to store the prices, and delayed_job to push all the updating into the background.
+It's built using Rails 3.1, which was the other main motivator for creating this - testing out the new assets pipeline in Rails 3.1. It's hosted on [heroku][2], uses gruff to make simple price graphs, nokogiri to update the data, the money class to store the prices, and delayed_job to push all the updating into the background.
 
 The gemfile is below:
 
