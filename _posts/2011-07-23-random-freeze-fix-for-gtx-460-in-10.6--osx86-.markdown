@@ -7,6 +7,11 @@ tags:
 - osx86
 ---
 
+## Update: completely rid yourself of freezes!
+
+While I had no more random freezes in 10.6.*, upgrading to Lion allowed for full stability and full use of graphics acceleration via OpenCL/CUDA/OpenGL. So please, upgrade to Lion, go purchase it on the App Store. [http://itunes.apple.com/us/app/os-x-lion/id444303913?mt=12](http://itunes.apple.com/us/app/os-x-lion/id444303913?mt=12). There are many guides available detailing installation.
+
+
 ## So far, anyway!
 
 Newly released drivers for the Quadro 4000 for Mac can be used for the GTX 460, and this combination with 10.6.7 and Chameleon rc750 have completely removed any random freezes thus far. The system has been running for 24 hours now. 

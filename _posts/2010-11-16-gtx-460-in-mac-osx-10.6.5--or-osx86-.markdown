@@ -7,9 +7,10 @@ tags:
 - osx86
 ---
 
-## Update:
+## Completely rid yourself of freezes!
 
-New drivers can be found [here at my latest article about the GTX 460](/2011/03/28/random-freeze-fix-for-gtx-460-in-10.6--osx86-/), and solved most of my problems with random freezes
+While I had no more random freezes in 10.6.*, upgrading to Lion allowed for full stability and full use of graphics acceleration via OpenCL/CUDA/OpenGL. So please, upgrade to Lion, go purchase it on the App Store. [http://itunes.apple.com/us/app/os-x-lion/id444303913?mt=12](http://itunes.apple.com/us/app/os-x-lion/id444303913?mt=12)
+
 
 ## But... But... That's illegal! 
 
