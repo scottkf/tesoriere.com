@@ -15,7 +15,7 @@ I've already migrated one app, [Wasted on Steam][4], and the performance enhance
 
 For this other app, this super duper secret one, I thought I would detail the process.
 
-## The intial setup
+## The initial setup
 
 Currently, there's no way to migrate the stack automatically, so we have to clone and proceed:
 
