@@ -200,18 +200,18 @@ Shortest transaction:	        0.12
 ### New hotness
 
 {% highlight bash %}
-Transactions:		         995 hits
-Availability:		       99.50 %
-Elapsed time:		       62.90 secs
-Data transferred:	        1.35 MB
-Response time:		        5.26 secs
-Transaction rate:	       15.82 trans/sec
-Throughput:		        0.02 MB/sec
-Concurrency:		       83.19
-Successful transactions:         995
-Failed transactions:	           5
-Longest transaction:	       15.67
-Shortest transaction:	        0.12
+Transactions:		        1000 hits
+Availability:		      100.00 %
+Elapsed time:		       19.99 secs
+Data transferred:	        1.36 MB
+Response time:		        0.61 secs
+Transaction rate:	       50.03 trans/sec
+Throughput:		        0.07 MB/sec
+Concurrency:		       30.33
+Successful transactions:        1000
+Failed transactions:	           0
+Longest transaction:	       14.04
+Shortest transaction:	        0.11
 {% endhighlight %}
 
 
