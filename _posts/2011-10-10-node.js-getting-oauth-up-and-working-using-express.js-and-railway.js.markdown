@@ -1,0 +1,187 @@
+--- 
+title: Node.js &#8212; Getting oAuth Up and Running Using Express.js and Mongoose
+layout: post
+tags:
+- nodejs
+- oauth
+- railwayjs
+- expressjs
+---
+
+## Getting Started
+
+If you're interested in how to incorporate this into [railwayjs][2], see [this other article][10] instead. I normally use [coffeescript][1], but for the purposes of this article, I converted it to javascript. For the impatient, this project can be found [in my github repos][9].
+
+Let's assume our `app.js`/`server.js` looks like this:
+
+{% highlight javascript %}
+var express = require('express');
+var app = express.createServer();
+
+app.get('/', function(req, res){
+  res.send('hello world');
+});
+
+app.configure(function() {
+  app.set('views', __dirname + '/app/views');
+  app.set('view engine', 'jade');
+});
+
+app.listen(3001);
+{% endhighlight %}
+
+Now, getting oAuth up and running can be easy, but you have to make sure you have [mongodb][4] up and running first, since we're using [mongoose-auth][6]. You could very well use [everyauth][7], which [mongoose-auth][6] is based upon, though it would require a little more effort if you were to change to another database. This is pretty easy: in Ubuntu, you can just `apt-get install mongodb`, or in osx, `brew install mongodb; `. If you need to install [homebrew][5] for OSX, `/usr/bin/ruby -e "$(curl -fsSL https://raw.github.com/gist/323731)"`.
+
+## Working with MongoDB
+
+Let's connect to mongo:
+
+{% highlight javascript %}
+var mongoose = require('mongoose')
+  , Schema = mongoose.Schema
+  , ObjectId = mongoose.SchemaTypes.ObjectId;
+  
+mongoose.connect('mongodb://localhost/example'); 
+{% endhighlight %}
+
+## Incorporate mongoose-auth
+
+To get this working, we have to add the following to our app.js:
+
+{% highlight javascript %}
+var conf = require('./config/oauth_providers');
+var UserSchema = new Schema({})
+	, User;
+var mongooseAuth = require('mongoose-auth');
+
+UserSchema.plugin(mongooseAuth, {
+  everymodule: {
+    everyauth: {
+      User: function() {
+        return User;
+      }
+    }
+  },
+  facebook: {
+    everyauth: {
+      myHostname: 'http://local.host:3001',
+      appId: conf.fb.appId,
+      appSecret: conf.fb.appSecret,
+      redirectPath: '/'
+    }
+  },
+  twitter: {
+    everyauth: {
+      myHostname: 'http://local.host:3001',
+      consumerKey: conf.twit.consumerKey,
+      consumerSecret: conf.twit.consumerSecret,
+      redirectPath: '/'
+    }
+  },
+  github: {
+    everyauth: {
+      myHostname: 'http://local.host:3001',
+      appId: conf.github.appId,
+      appSecret: conf.github.appSecret,
+      redirectPath: '/'
+    }
+  }
+});
+{% endhighlight %}
+
+The configuration for this file resides in a different folder, I made a `config` folder and put the `oauth_providers.js` file in there, it looks like this:
+
+{% highlight javascript %}
+module.exports = {
+  fb: {
+    appId: '111565172259433',
+    appSecret: '85f7e0a0cc804886180b887c1f04a3c1'
+  },
+  twit: {
+    consumerKey: 'JLCGyLzuOK1BjnKPKGyQ',
+    consumerSecret: 'GNqKfPqtzOcsCtFbGTMqinoATHvBcy1nzCTimeA9M0'
+  },
+  github: {
+    appId: '11932f2b6d05d2a5fa18',
+    appSecret: '2603d1bc663b74d6732500c1e9ad05b0f4013593'
+  },
+  instagram: {
+    clientId: 'be147b077ddf49368d6fb5cf3112b9e0',
+    clientSecret: 'b65ad83daed242c0aa059ffae42feddd'
+  },
+};
+{% endhighlight %}
+ 
+**NOTE**: these keypairs really shouldn't be made public, but they exist in the [mongoose-auth repo](https://github.com/bnoguchi/mongoose-auth/blob/master/example/conf.js), so you can test using them. This also assumes you have something setup in /etc/hosts to map local.host to 127.0.0.1, example: `127.0.0.1    local.host`
+
+In addition, we have to configure express a little differently:
+
+{% highlight javascript %}
+app.configure(function() {
+  app.set('views', __dirname + '/app/views');
+  app.set('view engine', 'jade');
+  app.use(express.bodyParser());
+  app.use(express.cookieParser());
+  app.use(express.session({secret: 'secret'}));
+  app.use(mongooseAuth.middleware());
+});
+
+mongooseAuth.helpExpress(app);
+{% endhighlight %}
+
+The above sets up cookies, adds a session key, hooks into mongooseAuth to the app, and exposes [everyauth's routes][7] to express' views.
+
+## Logging in
+
+Now, just by visiting [http://local.host:3000/auth/twitter][8], for example, and logging in, you'll be redirected back to the homepage. To check to make sure it's working, we have to add some views, make a folder called `views` and place the following in it named `index.jade`
+
+{% highlight bash %}
+- var items = ["facebook", "github", "twitter", "instagram"]
+- if (!everyauth.loggedIn)
+  h2 Not Authenticated
+  each item in items
+   a(href='/auth/' + item)
+     span Connect with <span style="text-transform: capitalize">!{item}</span><br />
+
+- else
+  h2 Authenticated
+  #user-id Logged in with `user.id` #{user.id} - aka `everyauth.user.id` #{everyauth.user.id}
+  - if (everyauth.facebook)
+    h3 Facebook User Data
+    p= JSON.stringify(everyauth.facebook.user)
+  - if (everyauth.twitter)
+    h3 Twitter User Data
+    p= JSON.stringify(everyauth.twitter.user)
+  - if (everyauth.github)
+    h3 GitHub User Data
+    p= JSON.stringify(everyauth.github.user)
+  - if (everyauth.instagram)
+    h3 Instagram User Data
+    p= JSON.stringify(everyauth.instagram.user)
+  h3
+    a(href='/logout') Logout
+{% endhighlight %}
+
+And don't forget to change the route, to 
+
+{%highlight javascript%}
+app.get('/', function(req, res){
+	res.render('index');
+});
+{%endhighlight%}
+
+
+And if you've been following, you'll see that all the twitter metadata is displayed. You're done! There's a lot of other things you can do, like being able to link each different account, whether or not to remember the user, and if anyone needs help with that, I can show you how to do it.
+
+This project can be found [in my github repo, expressjs &amp; oauth][9].
+
+  [1]: http://jashkenas.github.com/coffee-script/
+  [2]: http://railwayjs.com
+  [3]: http://expressjs.com
+  [4]: http://www.mongodb.org/
+  [5]: https://github.com/mxcl/homebrew
+  [6]: https://github.com/bnoguchi/mongoose-auth
+  [7]: https://github.com/bnoguchi/everyauth
+  [8]: http://local.host:3000/auth/twitter
+  [9]: http://github.com/scottkf/expressjs-oauth
+  [10]: /2011/10/10/node.js-getting-oauth-running-with-railway.js/
