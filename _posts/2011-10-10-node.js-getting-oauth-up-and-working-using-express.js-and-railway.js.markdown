@@ -87,6 +87,12 @@ UserSchema.plugin(mongooseAuth, {
     }
   }
 });
+
+mongoose.model('User', UserSchema);
+
+mongoose.connect('mongodb://localhost/example');
+
+User = mongoose.model('User');
 {% endhighlight %}
 
 The configuration for this file resides in a different folder, I made a `config` folder and put the `oauth_providers.js` file in there, it looks like this:
