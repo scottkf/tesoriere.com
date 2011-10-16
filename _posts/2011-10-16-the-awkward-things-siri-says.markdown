@@ -8,7 +8,7 @@ tags:
 - portfolio
 img: sirisays.png
 ---
-![The awkward things Siri says](http://tesoriere.com/images/assets/sirisays.png "the shit Siri says")
+![The awkward things Siri says](http://tesoriere.com/images/assets/2011/sirisays.png "the shit Siri says")
 
 ## A quick example of how easy nodejs easy to get up and running
 
