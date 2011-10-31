@@ -19,14 +19,14 @@ Srsly, that's more of an SEO title than anything, because damnit, I know how the
 rails new confusingTitleProject
 cd confusingTitleProject
 rails g model Person name:string
-rails g model ParentRelationship parent_id:integer child_id:integer
+rails g model PersonRelationship parent_id:integer child_id:integer
 
 {%endhighlight%}
 
 {% highlight ruby %}
 
-#App/Models/ParentRelationship.rb
-class ParentRelationship < ActiveRecord::Base
+#App/Models/PersonRelationship.rb
+class PersonRelationship < ActiveRecord::Base
   belongs_to :parent, :class_name => "Person"
   belongs_to :child, :class_name => "Person"
 end
@@ -37,7 +37,7 @@ class Person < ActiveRecord::Base
   validates_presence_of :first_name, :last_name
 
   has_many     :parent_child_relationships,
-               :class_name            => "ParentRelationship",
+               :class_name            => "PersonRelationship",
                :foreign_key           => :child_id,
                :dependent             => :destroy
   has_many     :parents,
@@ -45,7 +45,7 @@ class Person < ActiveRecord::Base
                :source                => :parent
 
   has_many     :child_parent_relationships,
-               :class_name            => "ParentRelationship",
+               :class_name            => "PersonRelationship",
                :foreign_key           => :parent_id,
                :dependent             => :destroy
   has_many     :children,
