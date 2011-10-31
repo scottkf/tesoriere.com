@@ -37,7 +37,7 @@ class Person < ActiveRecord::Base
   validates_presence_of :first_name, :last_name
 
   has_many     :parent_child_relationships,
-               :class_name            => "PersonRelationship",
+               :class_name            => "ParentRelationship",
                :foreign_key           => :child_id,
                :dependent             => :destroy
   has_many     :parents,
@@ -45,7 +45,7 @@ class Person < ActiveRecord::Base
                :source                => :parent
 
   has_many     :child_parent_relationships,
-               :class_name            => "PersonRelationship",
+               :class_name            => "ParentRelationship",
                :foreign_key           => :parent_id,
                :dependent             => :destroy
   has_many     :children,
