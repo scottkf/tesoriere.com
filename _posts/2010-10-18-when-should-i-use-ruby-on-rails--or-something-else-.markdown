@@ -63,7 +63,7 @@ The **template language** shouldn't be, but is a huge issue to a shallow individ
 
 Whether or not I need Symphony's **GUI** is also another important issue. If I don't feel like building an interface and using the default Symphony UI for tech-savvy clients I will often choose this (though you can also make your own interface as well).
 
-Once again, if it's more of web app, I'll often use rails because I might need an API (where I might need to **output** XML/JSON) right away, or at some point in the future. In Symphony, you can output XML right out of the box, and can [create a REST API](http://symphonycms.com/discuss/thread/32047/), but the CUD part of CRUD is a little harder to manage in symphony this way.
+Once again, if it's more of web app, I'll often use rails because I might need an API (where I might need to **output** XML/JSON) right away, or at some point in the future. In Symphony, you can output XML right out of the box, and can [create a REST API](http://symphony-cms.com/discuss/thread/32047/), but the CUD part of CRUD is a little harder to manage in symphony this way.
 
 The **database** usually isn't as huge issue, and mainly depends on where the app/site is being hosted. Symphony currently only supports MySQL, but nearly every host supports MySQL, so whatever!
 
