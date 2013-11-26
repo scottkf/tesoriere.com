@@ -51,10 +51,10 @@
 		<nav class="main">
 			<ul>
 				{% unless page.title == 'Home' %}<li><a href="/">home<span>the beginning</span></a></li>{%endunless%}
-				<li{% if page.title contains 'portfolio'%} class="selected"{%endif%}><a href="/tags/portfolio">projects<span>encyclopedia projectia</span></a></li>
+				{% unless page.title == 'Home' %}<li{% if page.title contains 'portfolio'%} class="selected"{%endif%}><a href="/tags/portfolio">projects<span>encyclopedia projectia</span></a></li>{%endunless%}
 				<li{% if page.title == 'Journal'%} class="selected"{%endif%}><a href="/journal">journal<span>musings and un-musings</span></a></li>
 				{% if page.title != 'Home' %}<li{% if page.title == 'Archive'%} class="selected"{%endif%}><a href="/archive">archives<span>aged to perfection</span></a></li>
-				<li><a href="http://projects.tesoriere.com/public">client access<span>progress!<span></li>
+				<!-- <li><a href="http://projects.tesoriere.com/public">client access<span>progress!<span></li> -->
 				{%endif%}
 				<li><a href="mailto:web@tesoriere.com">contact<span class="green">scott@tesoriere.com</span></a></li>
 			</ul>
@@ -86,7 +86,7 @@
 		</nav>
 		<section id="bottom">
 			{% if page.title != 'Archive' %}
-			{% if page.title == 'Home' %}
+			{% if page.title == 'H2ome' %}
 			<article class="work">
 				<span class="title recent-work">recent work</span>
 				<ul>
