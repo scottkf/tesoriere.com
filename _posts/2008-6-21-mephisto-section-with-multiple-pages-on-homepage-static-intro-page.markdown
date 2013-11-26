@@ -18,10 +18,12 @@ The reason it breaks is because of the way mephisto uses permanent links. It won
 The first method is the quickest; using the templates to achieve this is fairly simple and straightforward. In your 'layout.liquid', which is the default template, you can add the following:
 
 {% highlight bash %}
+{% raw %}
 {% if @section != nil %}
 {% include 'home' %}
 {% else %}
 {% include 'journal'%}
 {% endif %}
+{% endraw %}
 {% endhighlight %}
 There also exists a '_home.liquid' and '_journal.liquid' template with however you want them to be designed. And that's it!

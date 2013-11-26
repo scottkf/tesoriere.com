@@ -8,7 +8,7 @@ require 'webrick'
 require 'directory_watcher'
 require "term/ansicolor"
 require "jekyll"
-require "rdiscount"
+require "redcarpet"
 require "yaml"
 include Term::ANSIColor
 include WEBrick
@@ -128,7 +128,7 @@ syntax-highlighting: yes
   {% for post in site.posts %}
 		{% for tag in post.tags %}
 			{%if tag == "#{tag}" %}
-				{%include post.html%}
+				{% include post.html %}
 			{%endif%}
 		{%endfor%}
   {% endfor %}

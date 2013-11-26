@@ -1,4 +1,4 @@
 exclude: ['Rakefile', 'Readme.markdown', 'src', 'config.rb', 'deploy.yml']
-markdown: rdiscount
+markdown: redcarpet
 permalink: pretty
 pygments: true
