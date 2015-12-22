@@ -112,7 +112,7 @@ task :tags  => :tag_cloud do
   
   options = Jekyll.configuration({})
   site = Jekyll::Site.new(options)
-  site.read_posts('')
+  site.read
 
   # Remove tags directory before regenerating
   FileUtils.rm_rf("tags")
@@ -125,7 +125,7 @@ title: "tagged: #{tag}"
 syntax-highlighting: yes
 ---
   <h1 class="title">#{tag}</h1>
-  {% for post in site.posts %}
+  {% for post in reader.posts %}
 		{% for tag in post.tags %}
 			{%if tag == "#{tag}" %}
 				{% include post.html %}
@@ -151,7 +151,7 @@ task :tag_cloud do
 
   options = Jekyll.configuration({})
   site = Jekyll::Site.new(options)
-  site.read_posts('')
+  site.read
 
   html = ''
   max_count = site.tags.map{|t,p| p.count}.max
